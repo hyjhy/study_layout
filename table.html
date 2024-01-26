@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>셀 합치기 연습</title>
+    <style>
+      .co {
+        border-collapse: collapse;
+        /* 한줄로 표시 */
+      }
+      table,
+      th,
+      td {
+        border: 1px solid gray;
+      }
+      thead {
+        background-color: lightgray;
+      }
+      .g {
+        text-align: center;
+        background-color: lightgray;
+      }
+      .f {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="co">
+      <caption>
+        <strong>modern browser</strong>
+        <p>국내에서 자주 사용하는 모던 브라우저</p>
+      </caption>
+      <thead>
+        <tr>
+          <th>브라우저</th>
+          <th>제조업체</th>
+          <th>다운로드</th>
+        </tr>
+      </thead>
+      <tr>
+        <th>크롬(chrome)</th>
+        <td>google</td>
+        <td>
+          <a href="http://www.google.com/chrome/"
+            >http://www.google.com/chrome/</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <th>파이어폭스(firfox)</th>
+        <td>mozilla</td>
+        <td>
+          <a href="https://www.mozilla.org/ko/firefox/new/"
+            >https://www.mozilla.org/ko/firefox/new/</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <th>엣지(edge)</th>
+        <td>microsoft</td>
+        <td>
+          <a href="https://namu.wiki/w/Microsoft%20Edge"
+            >https://namu.wiki/w/Microsoft%20Edge</a
+          >
+        </td>
+      </tr>
+    </table>
+
+    <h3>교재 83쪽 셀 합치기 연습</h3>
+
+    <table>
+      <!-- <caption>표의 제목</caption> -->
+      <caption>
+        요안도라 객실
+      </caption>
+
+      <tr class="g">
+        <th>방 이름</th>
+        <th>대상</th>
+        <th>크기</th>
+        <th>가격</th>
+      </tr>
+
+      <tr>
+        <td class="f"><strong>유채방</strong></td>
+        <td>여성 도미토리</td>
+        <td rowspan="3">4인실</td>
+        <td rowspan="4">1인 20,000원</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2" class="f"><strong>동백방</strong></td>
+        <td>동성 도미토리</td>
+      </tr>
+
+      <tr>
+        <td>가족 1팀</td>
+      </tr>
+
+      <tr>
+        <td class="f"><strong>천혜향방</strong></td>
+        <td>-</td>
+        <td>2인실</td>
+      </tr>
+      <tr class="g">
+        <td colspan="4"><strong>바깥채 전체를 렌트합니다.</strong></td>
+      </tr>
+    </table>
+  </body>
+</html>

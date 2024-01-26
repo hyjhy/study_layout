@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 430px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        1일차
+        <ol type="a">
+          <li>해녀박물관</li>
+          <li>낚시체험</li>
+        </ol>
+      </li>
+      <li>
+        2일차
+        <ol type="A" start="3">
+          <li>용눈이오름</li>
+          <li>만장굴</li>
+          <li>카약체험</li>
+        </ol>
+      </li>
+    </ul>
+
+    <table border="1">
+      <!-- <caption>표의 제목</caption> -->
+      <caption>
+        색깔의 종류
+      </caption>
+      <thead>
+        <tr>
+          <th>종류</th>
+          <th>비비드</th>
+          <th>파스텔</th>
+          <th>어두운 계열</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>빨강</td>
+          <td>분홍색</td>
+          <td>검정</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>파랑</td>
+          <td>하늘색</td>
+          <td>남색</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>합계</td>
+          <td>3개</td>
+          <td>3개</td>
+          <td>3개</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h3>상품구성</h3>
+
+    <table border="1">
+      <!-- <caption>표의 제목</caption> -->
+      <caption>
+        실속형과 고급형 상품 구성
+      </caption>
+      <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>실속형</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>17,000원</td>
+        </tr>
+
+        <tr>
+          <td>실속형</td>
+          <td>5kg</td>
+          <td>18~25과</td>
+          <td>25,000원</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>고급형</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>28,000원</td>
+        </tr>
+
+        <tr>
+          <td>고급형</td>
+          <td>5kg</td>
+          <td>18~25과</td>
+          <td>47,000원</td>
+        </tr>
+      </tfoot>
+    </table><br>
+
+    <table border="1">
+      <!-- <caption>표의 제목</caption> -->
+      <caption>
+        색깔의 종류
+      </caption>
+      <thead>
+        <tr>
+          <th>종류</th>
+          <th colspan="2" style="background-color: palegreen">밝은 게열</th>
+
+          <th>어두운 계열</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>빨강</td>
+          <td>분홍색</td>
+          <td>검정</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>파랑</td>
+          <td rowspan="2" style="background-color: paleturquoise">하늘색</td>
+          <td>남색</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>노랑</td>
+          <td>회색</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>상품구성</h3>
+
+    <table border="1">
+      <!-- <caption>표의 제목</caption> -->
+      <caption>
+        실속형 & 고급형 상품 구성
+      </caption>
+      <thead>
+        <tr>
+          <th>용도</th>
+          <th>중량</th>
+          <th>개수</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td rowspan="2">실속형</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>17,000원</td>
+        </tr>
+
+        <tr>
+          <td>5kg</td>
+          <td>18~25과</td>
+          <td>25,000원</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td rowspan="2">고급형</td>
+          <td>3kg</td>
+          <td>11~16과</td>
+          <td>28,000원</td>
+        </tr>
+
+        <tr>
+          <td>5kg</td>
+          <td>18~25과</td>
+          <td>47,000원</td>
+        </tr>
+      </tfoot>
+    </table><br>
+
+    <h3>셀 합치기 연습</h3>
+
+    <table border="1">
+      <!-- <caption>표의 제목</caption> -->
+      <caption>
+        실습 1-3
+      </caption>
+      <thead>
+        <tr>
+          <th style="width: 100px;">이름</th>
+          <th>박효열</th>
+          <th>연락처</th>
+          <th>010-8664-3598</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>주소</td>
+          <td colspan="3"></td>
+        </tr>
+
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>공부하는 것</td>
+          <td colspan="3"></td>
+        </tr>
+
+      </tfoot>
+    </table><br>
+
+  </body>
+</html>
