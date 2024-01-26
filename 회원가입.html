@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 신청서</title>
+    <style>
+        img{
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+        fieldset {
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원 가입을 환영합니다!!</h1>
+    <fieldset>
+        
+        <legend>사용자 정보</legend>
+            <ul>
+                <li>
+                    아이디<input type="text" name="id" id="id">
+                </li>
+                <li>
+                    이메일<input type="email" name="email" id="email">
+                </li>
+                <li>
+                    비밀번호<input type="password" name="pw" id="pw">
+                </li>
+                <li>
+                    비밀번호 확인<br>
+                    <input type="password" name="pwd" id="pwd">
+                </li>
+                <img src="./images/로그인.jpg" alt="로그인">
+                <input type="submit" value="공지 창 열기">
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>이벤트와 소식</legend>
+            <label for="yes"><input type="radio" name="gender" id="male" value="s_1">메일 수신</label>
+            <label for="no"><input type="radio" name="gender" id="femle" value="s_2">메일 수신 안함</label>      
+        </fieldset>
+        <input type="submit" value="가입하기">
+        <input type="submit" value="취소">
+        
+    
+</body>
+</html>

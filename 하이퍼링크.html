@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>하이퍼텍스트 링크 연습</title>
+    <style>
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      .o {
+        width: 250px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>텍스트 링크 만들기</h1>
+    <p>
+      문단 태그 내용 안에서 링크 부분
+      <a href="https://www.naver.com/" target="_blank">네이버</a>로 이동
+    </p>
+    <!-- blank 새창
+        self targer속성의 기본값
+        parent 프레임을 사용했을때 링크 내용을 부모 프레임
+        top 프레임에서 벗어나는 링크 내용을 표시 -->
+
+    구글로 이동
+    <a href="https://www.google.com/?&bih=924&biw=933&hl=ko" target="_blank"
+      ><img src="./images/g.png" alt="구글"
+    /></a>
+    <br />
+    과제물 제출 네이버 카페
+    <a href="https://cafe.naver.com/bigbluesky" target="_blank">
+      <img src="./images/cafe.jpg" alt="네이버카페" /></a
+    >로 이동<br />
+    <a href="https://githrd.cafe24.com/" target="_blank"
+      ><img src="./images/lk.jpg" alt="글로벌아이티" class="o" /></a
+    >글로벌 아이티 링크로 이동 <br /><br />
+    <iframe src="test.html" frameborder="1"></iframe>
+    <!-- 작은 페이지 여는 코드 -->
+    <br /><iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6332.34681432618!2d126.9458190629489!3d37.48023409905231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f6589c60a31%3A0x80aa3db7b63b0c48!2z7IOQ65-s65SUIOyEnOyauOuMgOyeheq1rOygkA!5e0!3m2!1sko!2skr!4v1706248705853!5m2!1sko!2skr"
+      width="400"
+      height="300"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    구글지도 들어가서 지도 퍼가기
+  </body>
+</html>
