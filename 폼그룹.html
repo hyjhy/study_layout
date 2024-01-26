@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>겨울방학 특강 신청</h1>
+    <form action="">
+    <fieldset>
+        <legend>수강 신청인</legend>
+        <ul>
+            <li>
+                <label for="id">학번</label>
+                <input type="text" id="id" autofocus>
+                <!-- autofocus 페이지 열면 커서가 위치 -->
+            </li>
+            <li>
+                <label for="name">이름</label>
+                <input type="text" id="name">
+            </li>
+            <li>
+                <label for="class">학과</label>
+                <select name="" id="class" size="5" multiple>
+                    <optgroup label="공과대학">
+                        <option value="archi">건축공학과</option>
+                        <option value="mechanic">기계공학과</option>
+                        <option value="indust">산업공학과</option>
+                        <option value="elec">전기전자공학과</option>
+                        <option value="computer">컴퓨터공학과</option>
+                        <option value="chemical">화학공학과</option>
+                    </optgroup>
+                    <optgroup label="인문대학">
+                        <option value="history">사학과</option>
+                        <option value="lang">어문학부</option>
+                        <option value="philo">철학과</option>
+                    </optgroup>
+                </select>
+            </li>
+        </ul>
+    </fieldset>
+</form>
+</body>
+</html>

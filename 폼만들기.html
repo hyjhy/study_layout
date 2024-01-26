@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제물_폼</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        fieldset{
+            width: 400px;
+        }
+        ul>li{
+            margin: 10px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>마음의 편지 (회원가입)</h1><hr>
+    <fieldset>
+        <legend><b>개인정보</b></legend>
+        <ul>
+            <li>
+                닉네임<input type="text" name="id" id="id">
+                <input type="submit" value="중복확인">
+            </li>
+            <li>
+                아이디<input type="text" name="id" id="id">
+                <input type="submit" value="중복확인">
+            </li>
+            <li>
+                이메일<input type="email" name="email" id="email">
+            </li>
+            <li>
+                비밀번호<input type="password" name="pw" id="pw">
+            </li>
+            <li>
+                비밀번호 확인
+                <input type="password" name="pwd" id="pwd">
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend><strong>소개함</strong></legend>
+        <textarea name="" id="" cols="53" rows="10" placeholder="솔직하게 자신이 말하고 싶은거 담기"></textarea>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>이벤트 및 소식</b></legend>
+        <label for="yes"><input type="radio" name="male" value="y_1">메일 수신</label>
+        <label for="no"><input type="radio" name="male" value="y_3">메일 수신 안함</label><br>
+        <label for="yes"><input type="radio" name="number" value="y_2">연락처 수신</label>
+        <label for="no"><input type="radio" name="number" value="y_4">연락처 수신 안함</label>
+    </fieldset>
+
+
+</body>
+</html>
