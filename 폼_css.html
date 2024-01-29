@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-weight: bold;
+            width: 100px;
+            float: left;
+            /* 왼쪽으로 당겨주는 코드 */
+        }
+
+        .sentered {
+            text-align: center;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        fieldset {
+            margin: 15px 10px;
+        }
+
+        legend {
+            color: green;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>상품 주문서</h1>
+        <form>
+            <fieldset>
+                <legend>개인 정보</legend>
+                <ul>
+                    <li>
+                        <label for="uname" class="title">이름</label>
+                        <input type="text" id="uname" placeholder="여백 없이 입력">
+                    </li>
+                    <li>
+                        <label for="tell" class="title">연락처</label>
+                        <input type="tell" id="tell" placeholder="연락 가능한 번호">
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>배송지 정보</legend>
+                <ul>
+                    <li>
+                        <label for="addr" class="title">주소</label>
+                        <input type="text" size="40" id="addr" required>
+                    </li>
+                    <li>
+                        <label for="tel2" class="title">전화번호</label>
+                        <input type="tel" id="tel2" required>
+                    </li>
+                    <li>
+                        <label for="commend" class="title">메 모</label>
+                        <textarea id="commend" cols="40" rows="3"></textarea>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>주문 정보</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" >과테말라 안티구이 (100g)
+                        <input type="text" size="10">개
+
+                    </li>
+                    <li>
+                        <input type="checkbox" >인도네시아 만델링 (100g)
+                        <input type="text" size="10">개
+                    </li>
+                    <li>
+                        <input type="checkbox" >탐라는 도다(볼렌딩) (100g)
+                        <input type="text" size="10">개
+                    </li>
+                </ul>
+            </fieldset>
+            <div class="sentered">
+            <input type="submit" value="주문하기">
+            <input type="reset" value="다시쓰기">
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>
