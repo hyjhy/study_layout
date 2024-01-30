@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.icon-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.icon {
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.5); /* 아이콘을 1.5배로 확대 */
+}
+
+
+
+
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커서를 가져가면 아이콘 커지기</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="icon-container" id="iconContainer">
+    <div class="icon" id="icon">👋</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

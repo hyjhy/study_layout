@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .q1, .q2 {
+            display: flex;
+        }
+
+        .box1 {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+        .box2 {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+        .q1 {
+            position: absolute;
+            top: 0;
+            left: 99%;
+            transform: translate(-99%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="q2">
+        <div class="box1">div1</div>
+    </header>
+    <header class="q1">
+        <div class="box2">div2</div>
+        <div class="box2">div3</div>
+    </header>
+</body>
+
+</html>
