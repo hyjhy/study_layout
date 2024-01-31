@@ -1,0 +1,28 @@
+.dnwn{
+    width: 300px;
+    height: 150px;
+    background-color: palegreen;
+    border: 2px solid rgb(0, 0, 0);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.dms{
+    width: 300px;
+    height: 100px;
+    background-color: palegreen;
+    border: 2px solid rgb(0, 0, 0);
+    margin-top: 20px;
+}
+.vy{
+    width: 300px;
+    height: 150px;
+    background-color: palegreen;
+    border: 2px solid rgb(0, 0, 0);
+    margin-top: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+table {
+    width: 200px;
+    text-align: center;
+}

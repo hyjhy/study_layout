@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip{
+            cursor: pointer;
+        }
+        .tooltip-content{
+            visibility: hidden;
+            background-color: gold;
+            width: 400px;
+            padding: 10px;
+            margin: 10px 0;
+            color: aliceblue;
+            font-weight: 800;
+            text-align: center;
+        }
+        .tooltip:hover .tooltip-content{
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h1>툴팁효과</h1>
+    <p>
+        속성 화면에서 감추기만 할뿐 원래
+        요소가 있는 공간은 그대로 차지하지만,
+        아예 공간 조차 차지하지 않습니다. 
+    </p>
+    <div class="tooltip">
+        <span>여기에 마우스를 올려보세요</span>
+        <div class="tooltip-content">
+            <p>마우스를 가져와</p>
+        </div>
+    </div>
+</body>
+</html>
