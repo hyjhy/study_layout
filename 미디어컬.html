@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            height: 70px;
+            background-color: lightblue;
+            padding-top: 15px;
+        }
+        .logo {
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        li {
+            padding: 0 15px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .logologo{
+            color: black;
+        }
+        /* 창 크기 가로가 768 이하 일때 */
+        @media screen and (max-width: 768px) {
+            nav {
+                height: 120px;
+            }
+            .navbar ul li{
+                flex-direction: column;
+            }
+            .navbar ul li {
+                line-height: 5;
+            }
+            .appo {
+                display: none;
+                /* 자리를 차지 하지 않는다. */
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html" class="logologo"><h1>logo</h1></a>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">page</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <ul>
+                <li><a href="#">아이콘</a></li>
+                <li><a href="#" class="appo">아이콘</a></li>
+                <li class="appo">appointment</li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: circle;
+        }
+        li {
+            line-height: 30px;
+            margin-bottom: 2px;
+        }
+        ul li:nth-child(even){
+            color: blue;
+        }
+        ul li:nth-child(odd){
+            color: green;
+        }
+        ul li:nth-child(1){
+            color: red;
+        }
+        ul li:nth-child(3n+2){
+            background-color: gold;
+        }
+        ul li:nth-child(n+3){
+            color: gray;
+            font-weight: bold;
+        }
+        ul li:nth-child(3){
+            color: pink;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <h3>파스타 면의 종류</h3>
+    <ul>
+        <li>nth-child</li>
+        <li>1번째</li>
+        <li>2번째</li>
+        <li>3번째</li>
+        <li>4번째</li>
+    </ul>
+
+</body>
+</html>

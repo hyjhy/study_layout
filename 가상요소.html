@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box::after{
+            content: "이후 콘텐츠내용";
+            /* 앞에 문자 코드 */
+            color: red;
+        }
+        .box::before{
+            color: blue;
+            content: "이전 콘텐츠내용";
+            /* 뒤 문자 코드 */
+        }
+        .po::after{
+            content: "주문해줘";
+            background-color: green;
+            color: white;
+            margin: 5px;
+        }
+        .pl::before{
+            content: "주문해줘";
+            background-color: red;
+            color: white;
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>가상요소 선택자 지정</h1>
+        <p>웹 디자이너</p>
+        <p>웹 퍼블리션</p>
+        <p>프론트 엔드</p>
+        <p>백엔드</p>
+    </div>
+    <div class="box1">
+        <h1>제품 목록</h1>
+            <ul>
+                <li class="pl">제품a</li>
+                <li>제품b</li>
+                <li>제품c</li>
+                <li class="po">제품d</li>
+                <li class="po">제품e</li>
+                <li>제품f</li>
+            </ul>
+    </div>
+</body>
+</html>
