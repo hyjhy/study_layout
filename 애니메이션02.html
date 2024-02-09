@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: coral;
+            font-size: 30px;
+            text-align: center;
+            margin: 50px auto;
+            line-height: 200px;
+            animation: aniName 3s alternate infinite ease-in-out;
+        }
+        @keyframes aniName {
+            from {
+                transform: translate(0,0);
+            }
+            to {
+                transform: translate(400px,300px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box">animayion</div>
+    </div>
+</body>
+</html>

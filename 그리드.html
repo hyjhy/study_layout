@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드</title>
+    <style>
+        .parents {
+            display: grid;
+            /* 1. 부분 일부 분수 단위는 fr 가로 */
+            grid-template-columns: 1fr 1fr 1fr;
+            /* 2. 간격이 생김 x y */
+            grid-gap: 20px 30px;
+            /* grid-column-gap: 20px; */
+            /* grid-row-gap: 30px; */
+            /* 3. 세로 기준 */
+            grid-template-columns: repeat(4, 25%);
+            /* 4. 그리드 높이 설정 */
+            grid-auto-rows: 150px;
+            /* 콘텐츠에 맞춰서 박스 크기가 바뀐다. */
+            grid-auto-rows: minmax(120px, auto);
+        }
+        .parents > div {
+            border: 1px solid;
+
+        }
+        .box:nth-child(odd){
+            background-color: lightblue;
+            /* 홀수 */
+        }
+        .box:nth-child(even){
+            background-color: orange;
+            /* 짝수 */
+        }
+    </style>
+</head>
+<body>
+    <div class="parents">
+        <div class="box box1">box1
+            나는 무엇보다 무언가를 생각하는 것이 정말로 힘들다고 느낀다. 
+            나는 무엇보다 무언가를 생각하는 것이 정말로 힘들다고 느낀다. 
+            나는 무엇보다 무언가를 생각하는 것이 정말로 힘들다고 느낀다. 
+            나는 무엇보다 무언가를 생각하는 것이 정말로 힘들다고 느낀다. 
+            나는 무엇보다 무언가를 생각하는 것이 정말로 힘들다고 느낀다. 
+            나는 무엇보다 무언가를 생각하는 것이 정말로 힘들다고 느낀다. 
+        </div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+        <div class="box box6">box6</div>
+        <div class="box box7">box7</div>
+        <div class="box box8">box8</div>
+        <div class="box box9">box9</div>
+        <div class="box box10">box10</div>
+    </div>
+</body>
+</html>

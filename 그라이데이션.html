@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라데이션</title>
+    <style>
+        div {
+            width: 500px;
+            height: 350px;
+            border: 1px solid;
+            border-radius: 20px;
+        }
+        .grad{
+            /* 그라데이션을 지원하지 않는 브라우저 */
+            background-color: blue;
+            background: linear-gradient(to right bottom, blue, white);
+            /* 오른쪽 방향으로 파랑으로 하양으로 */
+
+            /* 브라우저 버전에 따라 다른 입력 방식을 가지고 있다 - 접두사 */
+            /* webkit 사파리에 사용하는 방법 */
+            /* -moz 파이어 폭스 , -o- 오페라 */
+            background: -webkit-linear-gradient(left top, blue, white);
+        }
+    </style>
+</head>
+<body>
+    <div class="grad"></div>
+</body>
+</html>

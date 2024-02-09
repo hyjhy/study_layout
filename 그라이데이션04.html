@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라데이션</title>
+    <style>
+        div {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            box-shadow: 10px 10px 10px gray;
+        }
+        .grad1{
+            background-color: green;
+            background: radial-gradient(circle at 20% 20%, yellow, orange);
+        }
+        .grad2 {
+            background-color: blue;
+            background: radial-gradient(circle at 10% 10%, rgb(220, 204, 31), brown, pink, white);
+        }
+        .grad3 {
+            background-color: palegreen;
+            background: radial-gradient(circle at 5% 5%, green, rgb(109, 66, 210));
+        }
+    </style>
+</head>
+<body>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+    <div class="grad3"></div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 100px);
+
+            grid-template-areas: 
+                "box1 box1 box2"
+                "box3 box4 box2"
+                "box5 box4 box6"
+                "box5 box7 box7"
+                /* "box5 box7 box7" */
+            ;
+
+        }
+        .box1 {
+            background-image: url(./images/사과.png);
+            background-color: peachpuff;
+            grid-area: box1;
+            margin: 5px;
+        }
+        .box2 {
+            background-image: url(./images/사과.png);
+            background-color: palegoldenrod;
+            grid-area: box2;
+            margin: 5px;
+
+        }
+        .box3 {
+            background-image: url(./images/사과.png);
+            background-color: palegreen;
+            grid-area: box3;
+            margin: 5px;
+
+        }
+        .box4 {
+            background-image: url(./images/사과.png);
+            background-color: palevioletred;
+            grid-area: box4;
+            margin: 5px;
+        }
+        .box5 {
+            background-image: url(./images/사과.png);
+            background-color: palevioletred;
+            grid-area: box5;
+            margin: 5px;
+        }
+        .box6 {
+            background-image: url(./images/사과.png);
+            background-color: palevioletred;
+            grid-area: box6;
+            margin: 5px;
+        }
+        .box7 {
+            background-image: url(./images/사과.png);
+            background-color: palevioletred;
+            grid-area: box7;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+        <div class="box box6">box6</div>
+        <div class="box box7">box7</div>
+    </div>
+</body>
+</html>

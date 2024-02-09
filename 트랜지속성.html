@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜지속성</title>
+    <style>
+        .box1 {
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+            border: 1px solid;
+            transition-property: width, height;
+            /* 대상 소유물 이라는 뜻을 가지고 있음 */
+            transition-delay: 1s;
+            /* 지연시간 */
+            transition-duration: 2s, 1s;
+            /* 실행시간 */
+        }
+        .box1:hover{
+            width: 300px;
+            height: 220px;
+        }
+        .box2 {
+            width: 150px;
+            height: 150px;
+            background-color: orangered;
+            border: 1px solid;
+            margin: 100px;
+            transition: 2s ease-in-out;
+            /* 속성, 실행시간, 실행형태, 지연시간을 한번에 쓸 수 있다. */
+        }
+        .box2:hover{
+            width: 250px;
+            height: 250px;
+            background-color: orange;
+            transform: rotate(270deg);
+        }
+        #ex div {
+            width: 150px;
+            height: 50px;
+            background-color: blue;
+            padding: 5px;
+            margin: 5px 10px;
+            color: aliceblue;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            display: inline-block;
+        }
+        #ex:hover div {
+            height: 400px;
+        }
+        #ex .ease {
+            transition: 3s ease;
+            /* 처음에는 천천히 시작해서 점점 빨라지다가 마지막에 천천히 끝남 */
+        }
+        #ex .linear {
+            transition: 3s linear;
+            /* 같은 속도 */
+        }
+        #ex .ease-in {
+            transition: 3s ease-in;
+            /* 느리게 시작 */
+        }
+        #ex .ease-out {
+            transition: 3s ease-out;
+            /* 느리게 끝 */
+        }
+        #ex .ease-in-out {
+            transition: 3s ease-in-out;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>트랜지션 속성</h2>
+    <p>웹 요소의 배경색이 바뀌거나 도형의 테두리가 원형으로
+        바뀌는 등 스타일 속성이 바뀌는 것을 말합니다. 
+    </p>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+
+
+    <h2>transition-timing-function속도 곡선 속성 값</h2>
+    <div id="ex">
+        <div class="ease">ease</div>
+        <div class="linear">linear</div>
+        <div class="ease-in">ease-in</div>
+        <div class="ease-out">ease-out</div>
+        <div class="ease-in-out">ease-in-out</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 1400px;
+    margin: 0 auto;
+}
+/********************** 헤더 부분 시작 ************************/
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: beige;
+    padding: 20px 0 10px;
+    /* padding 순서 : 좌 우 위 */
+}
+header ul{
+    display: flex;
+    list-style: none;
+}
+header ul li{
+    margin: 0 15px;
+    /* margin 순서 : (위,아래) (*좌,우) */
+}
+header a{
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+}
+.logo {
+    color: gray;
+    font-weight: bold;
+    font-size: large;
+}
+.fa-heart{
+    color: rgb(255, 154, 170);
+}
+
+/********************** 메인 부분 시작 ************************/
+.newCol{
+    height: 300px;
+    width: 1400px;
+    background: url(./images/진짜\ 고화질\ 맵.jpeg) no-repeat;
+    background-size: cover;
+    object-fit: fill;
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 20%;
+    color: white;
+}
+.newCol a{
+    font-size: 18px;
+    color: white;
+    text-decoration: underline gray;
+}
+
+/********************** 첫 번째 section 부분 ************************/
+.firSection{
+    text-align: center;
+    margin: 150px;
+}
+
+/********************** 밑줄 bar 부분 ************************/
+.bar{
+    border-top: dotted 1px gray;
+    width: 90%;
+    margin-top: 130px;
+    margin-left: 6%;
+}
+/********************** 푸터 부분 ************************/
+footer{
+    display: flex;
+}
+footer ul, li{
+list-style: none;
+}
+footer a{
+    text-decoration: none;
+    color: gray;
+    font-size: 15px;
+}
+footer div{
+    width: 100px;
+    padding-left: 20px;
+}

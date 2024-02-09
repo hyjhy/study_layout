@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zindex</title>
+    <style>
+        .pink {
+            background-color: pink;
+            border: 5px dashed hotpink;
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            z-index: -1;
+        }
+
+        .blue {
+            background-color: lightblue;
+            border: 5px dashed blue;
+            width: 400px;
+            height: 150px;
+            position: relative;
+        }
+
+        .green {
+            background-color: green;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            right: 250px;
+            top: 20px;
+            z-index: -3;
+        }
+
+        .p {
+            width: 500px;
+            border: solid red;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>z-index</h3>
+    <div class="p">
+        <p>
+            z-index란? z-index는 HTML이 화면에 그려질 때 어떤 요소가 위에 올라가는지를 설정하는 속성이다. z-index의 값이 높을 수록 위에 올라가며 z축 기준으로 순서를 가진다.
+            z-index는 양수, 음수, auto 값을 가질 수 있으며 따로 지정하지 않으면 auto다.
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="pink">첫번째</div>
+        <div class="blue">두번째</div>
+        <div class="green">세번째</div>
+    </div>
+
+</body>
+
+</html>

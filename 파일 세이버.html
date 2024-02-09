@@ -33,6 +33,18 @@
         .logologo{
             color: black;
         }
+        /* 아이콘은 폰트 개념
+           class를 입혀서 지정 */
+           .fa-hospital {
+            font-size: 40px;
+        }
+        .fa-brain {
+            font-size: 50px;
+            color: pink;
+            margin: 20px;
+        }
+
+
         /* 창 크기 가로가 768 이하 일때 */
         @media screen and (max-width: 768px) {
             nav {
@@ -48,12 +60,8 @@
                 display: none;
                 /* 자리를 차지 하지 않는다. */
             }
-
         }
-        .fa-solid {
-            font-size: 300px;
-        }
-
+        /* 창 크기 가로가 768 이하 일때 끝 style 마지막에 적기*/
     </style>
      <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
 
@@ -74,11 +82,12 @@
         </div>
         <div class="icons">
             <ul>
-                <li><a href="#" ><i class="fa-solid fa-hospital"></i>아이콘</a></li>
+                <li><a href="#"><i class="fa-solid fa-hospital"></i>아이콘</a></li>
                 <li><a href="#" class="appo">아이콘</a></li>
                 <li class="appo">appointment</li>
             </ul>
         </div>
     </nav>
+    <i class="fa-solid fa-brain"></i>
 </body>
 </html>

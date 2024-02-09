@@ -1,21 +1,155 @@
 <html>
 
 <head>
-
+    <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
 </head>
 
+<style>
+    h2 {
+        color: red;
+    }
+
+    .highlight {
+        border: solid;
+    }
+
+    /* #profile {
+        border: solid blue;
+    } */
+    .thumdnail_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .thumdnail {
+        width: 100%;
+    }
+    #stat_bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .circle_pic {
+        border: solid white 1px;
+        border-radius: 50%;
+
+        width: 100%;
+        height: 100%;
+        /* 미디어를 부모 요소에 꽉 맞춰서 채움 */
+        object-fit: cover;
+    }
+    #profile_pic {
+        width: 50px;
+        height: 50px;
+    }
+    #highlight_pic {
+        width: 35px;
+        height: 35px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #highlight_area {
+        display: grid;
+        grid-template-columns: 45px 45px 1fr;
+    }
+    .highlight {
+        text-align: center;
+    }
+    #profile {
+        display: grid;
+        grid-template-columns: 1fr 3.5fr;
+    }
+    #profile_info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        height: 50px;
+    }
+    #id {
+        font-size: 18px;
+        font-weight: 100;
+    }
+    button {
+        width: 95%;
+        height: 80%;
+
+        font-size: 10px;
+        background-color: white;
+        border: solid gray 1px;
+        border-radius: 3px;
+    }
+    #top {
+        display: grid;
+        grid-template-columns: 4fr 7fr 4fr;
+        height: 30px;
+    }
+    #top img {
+        margin-left: auto;
+        margin-right: auto;
+
+        height: 100%;
+        object-fit: contain;
+    }
+    #top input {
+        width: 95%;
+        height: 60%;
+
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+        background-color: rgb(250, 250, 250);
+
+        font-size: 10px;
+        font-weight: 100;
+
+        border: solid 1px gray;
+        border-radius: 3px;
+    }
+    i {
+        color: gray;
+    }
+    #sub_icons{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        text-align: center;
+        font-size: 15px;
+
+        height: 30px;
+    }
+    .selected {
+        border-bottom: solid gray 1px;
+    }
+</style>
+
 <body>
-    <div class="">
-        <img src="./images/in.png" alt="instagram">
+    <div id="top">
+        <img src="./images/in.png" alt="instagram" width="100px">
         <input type="search" value="검색">
     </div>
-    <div class="">
-        <img src="./images/c.png" alt="프로필사진">
-        <div class="">
-            <h2>top1052</h2></br>
+    <i class="fa-solid fa-cannabis"></i>
+    <i class="fa-solid fa-dragon"></i>
+    <i class="fa-solid fa-dice"></i>
+    <i class="fa-solid fa-ghost"></i>
+
+        <div id="profile">
+            <img src="./images/c.png" alt="프로필사진" class="circle_pic" id="circle_pic">
+        </div>
+
+        <div id="profile_info">
+            <div id="id">top1052
+                <i class="fa-solid fa-cannabis"></i>
+            </div>
             <button>프로필 편집</button>
         </div>
-    </div>
 
     <p>
         <strong>박효열 (hyoyeol park)</br></strong>
@@ -26,35 +160,57 @@
         </br>
     </p>
 
-    <div class="">
-        하이라이트 이미지 삽입
-        <img src="./images/과일.jpeg" height="35px">
-        <img src="./images/다운로드.jpg" height="35px">
+    <!-- 하이라이트 이미지 삽입 -->
+    <div id="highlight_area">
+        <div class="highlight">
+            <div><img src="./images/과일.jpeg" class="circle_pic" id="circle_pic"></div>
+            <div>😎</div>
+        </div>
+        <div class="highlight">
+            <div><img src="./images/다운로드.jpg" class="circle_pic" id="circle_pic"></div>
+            <div>🤩</div>
+        </div>
     </div>
 
-<div class="">
-    <p>
-        게시물</br>
-        팔로워</br>
-        팔로우</br>
-        133</br>
-        408</br>
-        189</br>
-    </p>
-</div>
-<div class="">아이콘이 들어갈 자리</div>
-<div class="">
-    게시물 썸네일이 들어갈 자리<br>
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-    <img src="./images/hi.jpg" width="32%">
-</div>
+    <div class="" id="stat_bar">
+            <div class="stat">
+                게시물</br>
+                133
+            </div>
+            <div class="stat">
+                팔로워</br>
+                408
+            </div>
+            <div class="stat">
+                팔로우</br>
+                189
+            </div>
+    </div>
+    <div id="sub_icons">
+        <div class="selected"><i class="fa-solid fa-ghost"></i></div>
+        <div class="selected"><i class="fa-solid fa-ghost"></i></div>
+        <div class="selected"><i class="fa-solid fa-ghost"></i></div>
+        <div class="selected"><i class="fa-solid fa-ghost"></i></div>
+        <div class="selected"><i class="fa-solid fa-ghost"></i></div>
+    </div>
+    <div>
+        게시물 썸네일이 들어갈 자리<br>
+        <div class="thumbnail_grid">
+            <img src="./images/hi.jpg" class="thumbnail">
+            <img src="./images/hi.jpg" class="thumbnail">
+            <img src="./images/hi.jpg" class="thumbnail">
+        </div>
+        <div class="thumbnail_grid">
+            <img src="./images/hi.jpg" class="thumbnail">
+            <img src="./images/hi.jpg" class="thumbnail">
+            <img src="./images/hi.jpg" class="thumbnail">
+        </div>
+        <div class="thumbnail_grid">
+            <img src="./images/hi.jpg" class="thumbnail">
+            <img src="./images/hi.jpg" class="thumbnail">
+            <img src="./images/hi.jpg" class="thumbnail">
+        </div>
+    </div>
 </body>
 
 </html>

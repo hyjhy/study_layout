@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> grid02 </title>
+    <style>
+        .parents1{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            margin-bottom: 20px;
+        }
+        .parents2{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+        .box {
+            padding: 15px;
+        }
+        .box:nth-child(odd){
+            background-color: lightpink;
+        }
+        .box:nth-child(even){
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h3> auto-fit일 때 </h3>
+    <p>화면이 넓을 때에는 남는 공간 없이 꽉 채워서 컬럼 표시</p>
+    <div class="parents1">
+        <div class="box">단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 얼마나 복잡한 삶을 살아가는가?단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 얼마나 복잡한 삶을
+            살아가는가?단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 얼마나 복잡한 삶을 살아가는가?</div>
+            <div class="box"> box2 </div>
+            <div class="box"> box3 </div>
+            <div class="box"> box4 </div>
+            <div class="box"> box5 </div>
+            <div class="box"> box6 </div>
+            <div class="box"> box7 </div>
+            <div class="box"> box8 </div>
+            <div class="box"> box9 </div>
+            <div class="box"> box10 </div>
+    </div>
+
+    <h3> auto-fit일 때 </h3>
+    <p>컬럼의 최소 너비(100px)만 표시하고 남는 공간은 그대로 둔다.</p>
+    <div class="parents2">
+        <div class="box">
+            단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 얼마나 복잡한 삶을 살아가는가?단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 얼마나 복잡한 삶을
+            살아가는가?단순하게 살아라. 현대인은 쓸데없는 절차와 일 때문에 ㅡㅋ타ㅣㅊ픠ㅏ틐치파ㅡㅌ챂키ㅏㅡㅍ얼마나 복잡한 삶을 살아가는가?
+        </div>
+        <div class="box"> box2 </div>
+        <div class="box"> box3 </div>
+        <div class="box"> box4 </div>
+        <div class="box"> box5 </div>
+        <div class="box"> box6 </div>
+        <div class="box"> box7 </div>
+        <div class="box"> box8 </div>
+        <div class="box"> box9 </div>
+        <div class="box"> box10 </div>
+    </div>
+</body>
+
+</html>

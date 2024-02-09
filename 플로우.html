@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+        div {
+            width: 650px;
+            margin: 100px auto;
+        }
+        div img {
+            width: 200px;
+            margin: 6px;
+        }
+        /* 퍼센트는 100% 최대 */
+        div img:nth-of-type(2) {
+            filter: blur(3px);
+        }
+        div img:nth-of-type(3) {
+            filter: brightness(0.5);
+        }
+        div img:nth-of-type(4) {
+            filter: contrast(150%);
+        }
+        div img:nth-of-type(5) {
+            filter: grayscale(80%);
+        }
+        div img:nth-of-type(6) {
+            filter: hue-rotate(180deg);
+        }
+        div img:nth-of-type(7) {
+            filter: invert(80%);
+        }
+        div img:nth-of-type(8) {
+            filter: saturate(0.5);
+        }
+        div img:nth-of-type(9) {
+            filter: sepia(100%);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+        <img src="./images/사과.png" alt="">
+    </div>
+</body>
+</html>

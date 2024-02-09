@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [target]{
+            background-color: blue;
+            color: white;
+        }
+        [target=_blank]{
+            background-color: red;
+        }
+        [title~="웹(wep)"]{
+            background-color: black;
+            color: aliceblue;
+        }
+        [lang|=eng]{
+            background-color: yellowgreen;
+            color: black;
+        }
+        a[href^="https"]{
+            background-color: pink;
+        }
+        a[href$="con"]{
+            background-color: green;
+        }
+        a[href*="da"]{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="">
+        <p>프론트엔드는 많은 앞 단에 이루어지는 <a href="#">웹 사이트</a>를 처리한다</p>
+    </div>
+    <p><a href="#" target="_self" title="웹 기획">웹 기획</a></p>
+    <p><a href="#" target="_blank" title="웹 스토리보드">웹 스토리보드</a></p>
+    <p><a href="#" title="웹 스토링텔링">웹 스토링텔링</a></p>
+
+    <div class="">
+        <h1 class="section" title="선택자 스타일 지정">선택자 스타일 지정</h1>
+        <p class="text-wep" title="웹 디자이너">웹 디자이너</p>
+    </div>
+
+    <p><a href="#" target="_self" title="웹 기획">웹 기획</a></p>
+    <p><a href="#" target="_blank" title="웹 스토리보드">웹 스토리보드</a></p>
+    <p><a href="#" title="웹(wep) 디자이너" lang="eng">웹 스토링텔링</a></p>
+
+    <p><a href="https://www.naver.com" target="_self" title="웹(wep) 기획">웹 기획</a></p>
+    <p><a href="https://www.daut.co.ko" target="_blank" title="웹(wep) 스토리보드">웹 스토리보드</a></p>
+    <p><a href="#" title="웹(wep) 스토링텔링">웹 스토링텔링</a></p>
+
+</body>
+</html>
