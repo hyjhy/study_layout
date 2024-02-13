@@ -5,6 +5,10 @@
 </head>
 
 <style>
+    body {
+        font-size: 3vw;
+    }
+
     h2 {
         color: red;
     }
@@ -26,6 +30,8 @@
     #stat_bar {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+
+        text-align: center;
 
         border-top: 1px solid gray;
         border-bottom: 1px solid gray;
@@ -54,19 +60,20 @@
     }
 
     #profile_pic {
-        width: 50px;
-        height: 50px;
+        width: 15vh;
+        height: 15vw;
     }
     #highlight_pic {
-        width: 35px;
-        height: 35px;
+        width: 10vh;
+        height: 10vw;
 
         margin-left: auto;
         margin-right: auto;
     }
     #highlight_area {
         display: grid;
-        grid-template-columns: 45px 45px 1fr;
+
+        grid-template-columns: 12vw 12vw 1fr;
     }
     .highlight {
         text-align: center;
@@ -82,14 +89,14 @@
         height: 50px;
     }
     #id {
-        font-size: 18px;
+        font-size: 6vw;
         font-weight: 100;
     }
     button {
         width: 95%;
         height: 80%;
 
-        font-size: 10px;
+        font-size: 3vw;
         background-color: white;
         border: solid gray 1px;
         border-radius: 3px;
@@ -97,7 +104,12 @@
     #top {
         display: grid;
         grid-template-columns: 4fr 7fr 4fr;
-        height: 30px;
+
+        height: 10vh;
+        min-height: 10vh;
+
+        border: solid gray 0.1px;
+        margin-bottom: 3vw;
     }
     #top img {
         margin-left: auto;
@@ -118,7 +130,7 @@
         text-align: center;
         background-color: rgb(250, 250, 250);
 
-        font-size: 10px;
+        font-size: 3vw;
         font-weight: 100;
 
         border: solid 1px gray;
@@ -127,14 +139,21 @@
     i {
         color: gray;
     }
+    #top i {
+        font-size: 4vw;
+    }
+    #top div {
+        text-align: center;
+        padding-top: 3vw;
+    }
     #sub_icons{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
         text-align: center;
-        font-size: 15px;
+        font-size: 5vw;
 
-        height: 30px;
+        height: 8vw;
     }
     .selected {
         border-bottom: solid gray 1px;
