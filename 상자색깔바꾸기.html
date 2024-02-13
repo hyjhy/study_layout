@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            list-style: none;
+            text-decoration: none;
+        }
+        a {
+            color: black;
+        }
+        ul {
+            display: flex;
+        }
+        #result {
+            border: 1px solid;
+            width: 100px;
+            height: 100px;
+            margin-left: 6%;
+        }
+        li {
+            border: 1px solid;
+            width: 50px;
+            padding: 2px;
+            margin: 3px;
+            text-align: center;
+        }
+
+        .g {
+            background-color: green;
+        }
+        .o {
+            background-color: orange;
+        }
+        .p {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a class="g" href="#" onclick="changeBg('green')">Green</a></li>
+        <li><a class="o" href="#" onclick="changeBg('orange')">Orange</a></li>
+        <li><a class="p" href="#" onclick="changeBg('purple')">Purple</a></li>
+    </ul>
+
+    <div id="result"></div>
+
+    <script>
+        function changeBg(color){
+            let result = document.querySelector('#result')
+            result.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

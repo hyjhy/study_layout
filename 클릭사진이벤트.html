@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 숨기는 코드</title>
+</head>
+
+<body>
+    <div id="item">
+        <img src="./images/사과.png" alt="">
+        <button class="over" id="open" onclick="showDetail()">상세 설명 보기</button>
+        <div class="detail" id="desc">
+            <h4>사진의 제목</h4>
+            <p>사진의 내용
+                사과는 폐 기능이 강화하고 천식과 같은 호흡기 질환의 위험성을 낮춘다. 또한, 암을 유발하는 물질의 활동을 억제하고 인체 세포를 발암물질로부터 보호해주는 효소를 자극하는 역할을 함으로써
+                대장암, 전립선암, 간암, 폐암의 위험을 낮춰준다고 보고되고 있다.
+            </p>
+            <button id="close" onclick="hideDetail()">상세 설명 닫기</button>
+        </div>
+    </div>
+
+
+    <script>
+        function showDetail(){
+            document.querySelector('#desc').style.display = "block"
+        }
+        function hideDetail(){
+            document.querySelector('#desc').style.display = "none"
+        }
+    </script>
+</body>
+
+</html>
