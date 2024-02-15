@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            list-style: none;
+        }
+
+        div {
+            margin-left: 100px;
+        }
+
+        h1 {
+            font-size: 100px;
+            margin-left: 15px;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        .li1 {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            margin: 2px;
+        }
+
+        .li2 {
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+            margin: 2px;
+
+        }
+
+        .li3 {
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            margin: 2px;
+
+        }
+
+        .li4 {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            margin: 2px;
+
+        }
+
+        .li5 {
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            margin: 2px;
+
+        }
+
+        .li6 {
+            width: 20px;
+            height: 20px;
+            background-color: brown;
+            margin: 2px;
+
+        }
+
+        .li7 {
+            width: 20px;
+            height: 20px;
+            background-color: gray;
+            margin: 2px;
+
+        }
+
+        .li8 {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            margin: 2px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="">
+    <h1 id="number">0</h1>
+
+    <button>+</button>
+    <button>-</button>
+</div>
+
+    <ul>
+        <a href="#" onclick="changeBg('red')"><li class="li1"></li></a>
+        <a href="#" onclick="changeBg('orange')"><li class="li2"></li></a>
+        <a href="#" onclick="changeBg('yellow')"><li class="li3"></li></a>
+        <a href="#" onclick="changeBg('green')"><li class="li4"></li></a>
+        <a href="#" onclick="changeBg('blue')"><li class="li5"></li></a>
+        <a href="#" onclick="changeBg('brown')"><li class="li6"></li></a>
+        <a href="#" onclick="changeBg('gray')"><li class="li7"></li></a>
+        <a href="#" onclick="changeBg('black')"><li class="li8"></li></a>
+    </ul>
+
+
+    <script>
+       
+
+
+
+
+
+
+        function changeBg(color){
+            let number = document.querySelector('#number')
+            number.style.color = color;
+        }
+    </script>
+</body>
+
+</html>

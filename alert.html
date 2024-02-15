@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>alert 알림 창 표시</h2>
+    <p>alert 알림 창 표시 내용 내용 내용</p>
+    <img src="./images/사과.png" id="pic">
+    <script>
+        // let 2가지 특수문자 변수이름 지을때
+        // 변수 이름을 지을때 맨앞에 올 수 있는 특수문자 _ $ 영문자 *알아둬라 숫자는 맨앞에 올 수는 없다
+        // let $pic = document.querySelector("#pic");
+        let $pic = document.getElementById("pic");
+        // 이미지 클릭시 뜨는 알림창
+
+        $pic.onclick = function(){ //익명함수
+            alert("빨간 사과를 클릭했습니다");
+        }
+    </script>
+</body>
+</html>

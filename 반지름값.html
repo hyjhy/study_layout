@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt</title>
+</head>
+<body>
+    <script>
+        let one1 = Number(prompt("구하고 싶은 원의 반지름은?"));
+
+        let sum = one1 * one1 * 3.14;
+
+        let avg = sum;
+
+        document.write("당신의 원의 넓이 " + avg);
+
+        if(avg % 2 == 0){
+            avg1 = '짝수 입니다.'
+        }else{
+            avg1 = '홀수 입니다'
+        }
+
+        console.log(avg);
+        console.log(avg1);
+
+        document.write("<h4>" + avg1 + "</h4>");
+
+    </script>
+</body>
+</html>
