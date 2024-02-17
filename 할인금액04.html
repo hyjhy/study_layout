@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두 자리 숫자 입력</title>
+</head>
+<body>
+
+<div>
+    <label for="twoDigitNumber">두 자리 숫자 입력:</label>
+    <input type="number" id="twoDigitNumber" maxlength="2" oninput="restrictInputLength()">
+</div>
+
+<script>
+    function restrictInputLength() {
+        // 입력 필드에서 값을 가져오기
+        var inputElement = document.getElementById("twoDigitNumber");
+        // getElementById: 문서 내에서 특정 ID를 가진 요소를 찾는 메소드입니다.
+        var inputValue = inputElement.value;
+
+        // 두 자리 숫자로 제한
+        if (inputValue.length >= 2) {
+            inputElement.value = inputValue.slice(0, 2);
+        }
+    }
+    // function restrictInputLength(){
+    //             javascropt를 불러내기 위한 코드
+    //             var inputElement = 
+    // }
+</script>
+
+</body>
+</html>

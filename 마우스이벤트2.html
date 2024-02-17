@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트2</title>
+</head>
+<body>
+    <img src="./images/과일.jpeg" id="cover">
+    <!-- <img src="./images/사과.png" alt=""> -->
+
+
+    <script>
+        // 마우스를 올렸을 때 museover, dblclick, mousemove
+        let cover = document.getElementById("cover")
+        cover.addEventListener("dblclick", function(){
+            cover.src = "./images/과일.jpeg"
+        })
+
+        cover.addEventListener("mousemove", function(){
+            cover.src = "./images/사과.png"
+        })
+    </script>
+</body>
+</html>

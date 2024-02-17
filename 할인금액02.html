@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 가격 계산기</title>
+</head>
+<body>
+
+<div>
+    <label for="originalPrice">상품의 원래 가격:</label>
+    <input type="number" id="originalPrice" placeholder="원래 가격을 입력하세요">
+</div>
+
+<div>
+    <label for="discountPercentage">할인 퍼센트:</label>
+    <input type="number" id="discountPercentage" placeholder="할인 퍼센트를 입력하세요">
+</div>
+
+<button onclick="calculateDiscountedPrice()">할인 가격 계산</button>
+
+<script>
+    function calculateDiscountedPrice() {
+
+        var originalPrice = parseFloat(document.getElementById("originalPrice").value);
+        var discountPercentage = parseFloat(document.getElementById("discountPercentage").value);
+
+
+        if (isNaN(originalPrice) || isNaN(discountPercentage) || originalPrice < 0 || discountPercentage < 0) {
+            alert("올바른 값을 입력하세요.");
+            return;
+        }
+
+        // 할인 가격 계산
+        // var discountedPrice = originalPrice - (originalPrice * discountPercentage / 100);
+        // 할인된 가격
+        // var discountedPrice = originalPrice * discountPercentage / 100;
+        // 퍼센트 올린 값
+        var discountedPrice = originalPrice * (1 + discountPercentage / 100);
+        // 
+
+        // 결과 출력
+        alert("할인된 가격은 " + discountedPrice.toFixed(2) + "원 입니다.");
+    }
+</script>
+
+</body>
+</html>

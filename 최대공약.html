@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 가격 계산기</title>
+</head>
+<body>
+
+<div>
+    <label for="originalPrice">첫번쨰</label>
+    <input type="number" id="originalPrice" maxlength="2" placeholder="첫 번째 가격을 입력하세요">
+</div>
+
+<div>
+    <label for="discountedPrice">두번째</label>
+    <input type="number" id="discountedPrice" maxlength="2" placeholder="두 번째 가격을 입력하세요">
+</div>
+
+<button onclick="calculateDiscountedPrice()">계산된 값</button>
+
+<script>
+    function calculateDiscountedPrice() {
+        var originalPrice = parseFloat(document.getElementById("originalPrice").value);
+        var discountedPrice = parseFloat(document.getElementById("discountedPrice").value);
+
+        if (isNaN(originalPrice) || isNaN(discountedPrice) || originalPrice < 0 || discountedPrice < 0) {
+            alert("올바른 값을 입력하세요.");
+            return;
+        }
+
+        var discountRate = (originalPrice + discountedPrice) / 2;
+
+        alert("최대공약수 " + discountRate.toFixed(2) + " 입니다.");
+    }
+</script>
+
+</body>
+</html>

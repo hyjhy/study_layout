@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>keydown <input id="keydown"></p>
+    <p>change <input id="change"></p>
+    <p>input <input id="input"></p>
+
+    <div id="result"></div>
+
+
+    <script>
+        let result = document.querySelector("#result")
+
+        // DOMContentLoaded / HTML 로 DOM 트리를 만드는게 완성되었을 때
+        // 이미지, 스타일시트 같은 외부 지원 모두 불러오는 것이 끝났을 때 발생
+        document.addEventListener("DOMContentLoaded", function (e) {
+            // 한박자 늦은 출력. 감지할 수 있는 장점(어떤 키를 눌렀는지
+            let keydown = document.querySelector("#ketdown");
+            keydown.addEventListener("keydown", function (e) {
+                console.log(e.target.value)
+            })
+        })
+
+        // 빈 공간이나 엔터 누르고 나서 출력. (포커스 잃을 때 기준)
+        let change = document.querySelector("#change");
+        change.addEventListener("change", function (e) {
+            console.log(e.target.value)
+        })
+
+        // 텍스트 입력 받을 때 input 이벤트 추천
+        let input = document.querySelector("#input");
+        input.addEventListener("input", function (e) {
+            console.log(e.target.value)
+            let show = e.target.value;
+            result.innerText = show
+        })
+
+    </script>
+</body>
+
+</html>

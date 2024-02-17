@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수02</title>
+</head>
+<body>
+    
+
+
+    <script>
+        function sumMulti(x,y){
+            if (x == y){
+                return x * y;
+            } else {
+                return x + y;
+            }
+        }
+        console.log(sumMulti(5,10)); // 인수, 인자
+        console.log(sumMulti(10,10));
+        console.log(sumMulti(50,54));
+        // 함수 실행 여러번 할 수 있다
+
+        // Number() psreInt() 정수로 변환, psrseFloat()실수(소수점)
+        let num1 = parseInt(prompt("비교할 첫 번째 숫자"))
+        let num2 = parseInt(prompt("비교할 두 번째 숫자"))
+
+        compareTwo(num1,num2);
+
+        function compareTwo(x,y){
+            if (x == y){
+                alert(`${x}와 ${y}는 같다.`);
+            } else if(x > y){
+                alert(`${x}가 ${y}보다 큽니다.`);
+            }else {
+                alert(`${y}가 ${x}보다 큽니다.`);
+        }
+    }
+    </script>
+</body>
+</html>

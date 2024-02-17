@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 속성 추출</title>
+</head>
+<body>
+    <input type="button" id="input" value="hi">
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded",
+        function(e){
+            let input = document.querySelector("input")
+            input.addEventListener("click",
+            function(e){
+                // 1. console.log(e.target.getAttribute("type"))
+                // 2. type을 text로 변경
+                // e.target.setAttribute("type", "text")
+                // 3. 토글로 변경
+                if(e.target.getAttribute("type") === "button"){
+                    e.target.setAttribute("type", "text");
+                }
+            })
+            input.addEventListener("change", function(e){
+                // 2. type을 button 으로 변경
+                // e.target.setAttribute("type", "button")
+                if(e.target.getAttribute("type") === "text"){
+                    e.target.setAttribute("type", "button");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

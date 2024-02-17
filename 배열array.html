@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let fruit = "apple";
+        console.log(("과일 이름은?" + fruit));
+        let fruit1 = "kiwi";
+        console.log(("과일 이름은?" + fruit1));
+        let fruit2 = "orange";
+        console.log(("과일 이름은?" + fruit2));
+
+        let fruits = ["apple", "kiwi", "orange", "banana", "grape"];
+        console.log("과일 종류는 " + fruits + "가 있습니다.")
+        console.log("과일 종류 중 세번째 과일은 " + fruits[2] + "입니다.")
+        console.log("과일 종류 중 세번째 과일은 " + fruits[1] + "입니다.")
+
+
+        // apple이 있던 0번 인덱스에 파인애플 추가
+        fruits[0] = "pineapple";
+        console.log(fruits)
+        // 3번째에 토마톰 추가해보기
+        fruits[2] = "tomato";
+        console.log(fruits)
+        // pop() 마지막에 있는 아이템을 뺌
+        fruits.pop();
+        console.log(fruits);
+        // push() 아이템을 배열 마지막에 추가
+        fruits.push("cherry")
+        console.log(fruits)
+        // includes 포함하고 있는지 묻는다
+        console.log(fruits.includes("apple")); // false 거짓
+
+        // indexOf 몇번째 인덱스에 있는지 묻는다
+        console.log(fruits.indexOf("kiwi"));
+        // slice() 잘라낸다
+        console.log(fruits.slice(2)); // 엎에서 2개 잘라냄
+        console.log(fruits.slice(1,3)); // 시작점, 끝점
+        console.log(fruits); // 기존 배열 유지
+
+        // slice splice 차이점
+        let otherFruit = fruits.slice(1,3);
+        console.log("새로운 배열", otherFruit);
+
+        // 기존의 배열이 잘림
+        fruits.splice(2,2) // 2번 인덱스부터 2개
+        console.log(fruits);
+
+        fruits[1] = "채리";
+        console.log(fruits);
+        console.log(fruits.indexOf("채리"));
+
+        fruits.push("영희", "철수", 4567, 8888, "길동");
+        console.log(fruits);
+        console.log(fruits,slice(2));
+        console.log(fruits);
+
+        // shift() 맨 앞 추출 // pop() 함수는 맨 뒤의 요소 추출
+        fruits.shift();
+        console.log(fruits);
+
+        // unshift() 맨 앞, push() 맨 뒤에 요소 추가
+        fruits.unshift("책");
+        console.log(fruits);
+    </script>
+</body>
+</html>

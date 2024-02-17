@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>모달창</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         #modal-box {
             border: 1px solid;
             position: fixed;
@@ -20,10 +22,12 @@
             background-color: rgba(0, 0, 0, 0.5);
             display: none;
         }
+
         #modal-box.active {
             display: flex;
         }
-        #modal-contents{
+
+        #modal-contents {
             width: 300px;
             height: 200px;
             border: 1px solid salmon;
@@ -31,9 +35,10 @@
         }
     </style>
 </head>
+
 <body>
     <button id="open">프로필 보기</button>
-    
+
     <div id="modal-box">
         <div id="modal-contents">
             <span id="title">My profile</span>
@@ -46,14 +51,20 @@
         const close = document.querySelector("#close");
         const modalBox = document.querySelector("#modal-box");
         // 클릭하면 classList에 .active 스타일 추가
-        open.addEventListener("click", ()=>{
-            modalBox.classList.add("active");
+        open.addEventListener("click", () => {
+            // modalBox.classList.add("active");
             // 토글로 바꿔서 입력해보기.
+            modalBox.classList.toggle("active")
+            // modalBox.style.display("block")
+
         });
-        close.addEventListener("click", ()=>{
-            modalBox.classList.remove("active");
+        close.addEventListener("click", () => {
+            // modalBox.classList.remove("active");
             // 토글로 바꿔서 입력해보기
+            modalBox.classList.toggle("active")
+            // modalBox.style.display("block")
         });
     </script>
 </body>
+
 </html>

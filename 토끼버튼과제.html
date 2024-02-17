@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 130px;
+        }
+        .pic1 {
+            display: block;
+        }
+        .pic2 {
+            display: none;
+        }
+        .pic1.active {
+            display: none;
+        }
+        .pic2.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="./img/토끼.jpeg" class="pic1">
+    <img src="./img/검은.jpeg" class="pic2">
+    
+    <button class="toggleBtn">반전</button>
+    
+
+    <script>
+        const $pic1 = document.querySelector(".pic1");
+        const $pic2 = document.querySelector(".pic2");
+        const $toggleBtn = document.querySelector(".toggleBtn");
+
+        $toggleBtn.addEventListener("click", () => {
+            $pic1.classList.toggle("active")
+            $pic2.classList.toggle("active")
+        })
+    </script>
+</body>
+</html>

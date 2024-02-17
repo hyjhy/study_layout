@@ -90,35 +90,69 @@
 
 <body>
     <div class="">
-    <h1 id="number">0</h1>
+        <h1 id="numBer">0</h1>
 
-    <button>+</button>
-    <button>-</button>
-</div>
+        <button id="btnPlus">+</button>
+        <button id="btnMinus">-</button>
+    </div>
 
     <ul>
-        <a href="#" onclick="changeBg('red')"><li class="li1"></li></a>
-        <a href="#" onclick="changeBg('orange')"><li class="li2"></li></a>
-        <a href="#" onclick="changeBg('yellow')"><li class="li3"></li></a>
-        <a href="#" onclick="changeBg('green')"><li class="li4"></li></a>
-        <a href="#" onclick="changeBg('blue')"><li class="li5"></li></a>
-        <a href="#" onclick="changeBg('brown')"><li class="li6"></li></a>
-        <a href="#" onclick="changeBg('gray')"><li class="li7"></li></a>
-        <a href="#" onclick="changeBg('black')"><li class="li8"></li></a>
+        <a href="#" onclick="changeBg('red')">
+            <li class="li1"></li>
+        </a>
+        <a href="#" onclick="changeBg('orange')">
+            <li class="li2"></li>
+        </a>
+        <a href="#" onclick="changeBg('yellow')">
+            <li class="li3"></li>
+        </a>
+        <a href="#" onclick="changeBg('green')">
+            <li class="li4"></li>
+        </a>
+        <a href="#" onclick="changeBg('blue')">
+            <li class="li5"></li>
+        </a>
+        <a href="#" onclick="changeBg('brown')">
+            <li class="li6"></li>
+        </a>
+        <a href="#" onclick="changeBg('gray')">
+            <li class="li7"></li>
+        </a>
+        <a href="#" onclick="changeBg('black')">
+            <li class="li8"></li>
+        </a>
     </ul>
 
 
     <script>
-       
+        const $btnPlus = document.getElementById("btnPlus")
+        const $btnMinus = document.getElementById("btnMinus")
+        let $numBer = document.querySelector("#numBer")
+        let num = 0; // 제어할 숫자를 0으로 초기화
+
+        // btnPlus를 클릭할 때마다 함수
+        $btnPlus.addEventListener("click", e => {
+            e.preventDefault(); // 새로고침 방지
+            ++num; // 1씩 증가
+            console.log(num);
+            $numBer.innerText = num;
+
+        })
+        // btnMinus를 클릭할 때마다 함수
+        $btnMinus.addEventListener("click", e => {
+            e.preventDefault(); // 새로고침 방지
+            --num; // 1씩 감소
+            console.log(num);
+            $numBer.textContent = num;
+
+        })
 
 
 
 
-
-
-        function changeBg(color){
-            let number = document.querySelector('#number')
-            number.style.color = color;
+        function changeBg(color) {
+            let numBer = document.querySelector('#numBer')
+            numBer.style.color = color;
         }
     </script>
 </body>

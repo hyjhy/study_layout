@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 입력 시 쉼표 표시 예제</title>
+</head>
+<body>
+
+<div>
+    <label for="numberInput">숫자 입력:</label>
+    <input type="text" id="numberInput" oninput="formatNumber()">
+</div>
+
+<script>
+    function formatNumber() {
+        // 입력 필드에서 숫자 가져오기
+        var numberInput = document.getElementById("numberInput");
+        var inputValue = numberInput.value;
+
+        // 쉼표 추가하기
+        var formattedValue = inputValue.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        // 쉼표가 추가된 값을 입력 필드에 설정
+        numberInput.value = formattedValue;
+    }
+</script>
+
+</body>
+</html>
