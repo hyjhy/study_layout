@@ -9,6 +9,8 @@
     <button onclick="innText()">innerText로 표시하기</button>
     <button onclick="innHTML()">innerHTML로 표시하기</button>
     <button onclick="textCon()">textContent로 표시하기</button>
+
+    <button onclick="imgPush()">textContent로 표시하기</button>
     <pre>
         textContent 속성 : 요소의 덱스트 콘텐츠만 반환하거나
         설정하고 그 안에 있는 모든 HTML태그 또는 요소는 무시한다.
@@ -17,10 +19,14 @@
 
     <h1>현재 시간 : </h1>
     <div id="current"></div>
+    <!-- <img src="./img/검은.jpeg" alt=""> -->
 
 
     <script>
         let now = new Date(); // 현재시간
+        let img = document.querySelector("img")
+        let img3 = "./img/검은.jpeg"
+
 
         function innText(){
             document.getElementById("current").innerText = now;
@@ -30,6 +36,11 @@
         }
         function textCon(){
             document.getElementById("current").textContent = now;
+        }
+        function imgPush() {
+            let img = document.createElement("img")
+            img.setAttribute("src", img3);
+            document.getElementById("current").appendChild(img)
         }
     </script>
 </body>

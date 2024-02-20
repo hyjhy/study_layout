@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공부한 기간</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .accent {
+            color: red;
+            font-size: 40px;
+            padding: 20px;
+        }
+        #container{
+            padding: 60px;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1>공부한 기간</h1><br>
+    <p><span class="accent" id="result1"></span>일 동안 공부했습니다.</p><br>
+    <p><span class="accent" id="result2"></span>시간 동안 공부했습니다.</p><br>
+    <p><span class="accent" id="result3"></span>분 동안 공부했습니다.</p><br>
+        <p>축하합니다!</p>
+</div>
+
+
+
+    <script>
+        // 공부한 날짜
+        let day = new Date("2024-02-19");
+        let firstDay = new Date("2024-01-25");
+
+        let toNow = day.getTime();
+        let toFirst = firstDay.getTime();
+        let passedTime = toNow - toFirst;
+
+        passedTime = Math.round(passedTime/(1000*60*60*24))
+        // round 반올림 floor 소수점 버리기
+        document.querySelector("#result1").innerText = passedTime;
+
+        // 공부한 시간
+        let time = new Date("2024-02-19");
+        let firstTime = new Date("2024-01-25");
+
+        let toTime = time.getTime();
+        let toFirst1 = firstDay.getTime();
+        let passedTime1 = toNow - toFirst;
+
+        passedTime1 = Math.round(passedTime*24)
+        document.querySelector("#result2").innerText = passedTime1;
+
+        // 공부한 분
+        let time1 = new Date("2024-02-19");
+        let firstTime1 = new Date("2024-01-25");
+
+        let toTime1 = time.getTime();
+        let toFirst2 = firstDay.getTime();
+        let passedTime2 = toNow - toFirst;
+
+        passedTime2 = Math.round(passedTime1*60)
+        document.querySelector("#result3").innerText = passedTime2;
+
+    </script>
+</body>
+</html>

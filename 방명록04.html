@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        section {
+            border: 5px dashed brown;
+            background-color: orange;
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        a {
+            width: 200px;
+            height: 50px;
+            border: 2px solid brown;
+            background-color: greenyellow;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .back {
+            width: 600px;
+            height: 1px;
+            border-bottom: 2px solid brown;
+            margin: 20px;
+        }
+
+        input {
+            width: 300px;
+            margin: 10px;
+        }
+        .line {
+            cursor: pointer;
+        }
+
+        .throughline {
+            text-decoration: line-through;
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>방명록</h1>
+        <div>
+            <i>방명록을 기록해 보세요.</i>
+        </div>
+
+        이름 : <input class="in1" type="text"><br>
+        연락처 : <input class="in2" type="number" placeholder=" - 빼고 입력해주세요 (예시 : 01012345678)"><br>
+        한마디 : <input class="in3" type="text"><br>
+
+        <button onclick="addContents(); return false">방명록 기록 남기기</button>
+        <div class="back"></div>
+        <article>
+            <h1>클릭해보세요</h1>
+            <h3>할 일 목록</h3>
+            <ul>
+                <li class="line" onclick="toggleUnderline(this)">할 일1</li>
+                <li class="line" onclick="toggleUnderline(this)">할 일2</li>
+                <li class="line" onclick="toggleUnderline(this)">할 일3</li>
+            </ul>
+        </article>
+        
+        <div id="inpo">
+
+        </div>
+    </section>
+
+    <script>
+        function addContents() {
+            let newItem = document.createElement("div"); // 새로운 div 요소 노드 추가
+            let $in1 = document.querySelector(".in1"); // 이름 필드
+            let $in2 = document.querySelector(".in2"); // 연락처 필드
+            let $in3 = document.querySelector(".in3"); // 한마디 필드
+            
+            // 입력 받은 값으로 텍스트 생성
+            let text = `이름: ${$in1.value}, 연락처: ${$in2.value}, 한마디: ${$in3.value}`;
+            let newText = document.createTextNode(text);
+
+            // 텍스트를 div에 추가
+            newItem.appendChild(newText);
+
+            // 웹 문서에서 부모 노드를 가져와서 div 추가
+            let $itemList = document.querySelector("#inpo");
+            $itemList.appendChild(newItem);
+
+            // 입력 필드 초기화
+            $in1.value = "";
+            $in2.value = "";
+            $in3.value = "";
+        }
+        function toggleUnderline(element) {
+            element.classList.toggle("throughline");
+        }
+
+    </script>
+</body>
+
+</html>

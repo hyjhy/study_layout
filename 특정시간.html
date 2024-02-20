@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1><span id="result"></span>시<span id="result1"></span>분 입니다.</h1>
+        <img src="#" id="images">
+    </div>
+
+    <script>
+        let now = new Date();
+        let toNow = now.getHours();
+        let toMin = now.getMinutes();
+        let pic = document.querySelector("#images");
+
+        document.querySelector("#result").innerText = toNow;
+        document.querySelector("#result1").innerText = toMin;
+
+        if(toNow !== null){
+            (toNow <= "12") ? pic.src = ("./img/토끼.jpeg") : pic.src = ("./img/검은.jpeg");
+        }
+    </script>
+</body>
+</html>

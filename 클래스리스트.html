@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clicked{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">my profile</h1>
+    <div>
+        <img src="./img/토끼.jpeg" alt="휜 토끼">
+        <div id="dest">
+            <p class="user">이름 : 흰토끼</p>
+            <p class="user">연락처 : 1234-5678</p>
+            <p class="user">블로그 : blog.naver.com</p>
+        </div>
+    </div>
+
+    <script>
+        const title = document.querySelector("#title");
+        // p 눌렀을 때 다른 글자 출력
+        // img 눌렀을 때 다른 이미지 나오게 img.src = "./이미지 경로"
+        
+        // title을 가져와서 add추가 classList를 추가해보기
+        title.onclick = () => (title.innerText = "프로필");
+        // title.onclick = () => {
+        //     title.classList.add("clicked");
+        // };
+        title.onclick = () => {
+            if (!title.classList.contains("clicked")){
+                title.classList.add("clicked");
+            } else {
+                title.classList.remove("clicked")
+            }
+        }
+        // classList는 요소에 적용한 클래스 스타일을 모두 모아놓은 프로퍼티
+        // 콘솔창에 입력해보기
+        // document.querySelector("#desc p").classList
+
+        // 1️⃣ 콘솔창에 입력해보기
+        // document.querySelector("#desc p").classList
+
+        // 2️⃣ classList는 요소에 적용한 클래스 스타일을 모두 모아놓은 프로퍼티
+        // [기본형]
+        // 요소.classList.add(클래스명)
+        // 요소.classList.remove(클래스명)
+
+        // 3️⃣ contains()함수는 특징 클래스가 있는지 확인할 때 유용.
+        // [기본형]
+        // 요소.classList.contains(클래스명)
+
+        // 4️⃣ 이후 토글로 만들기(다크, 데이모드)
+        // [기본형]
+        // 요소.classList.toggle(클래스명)
+    </script>
+</body>
+</html>

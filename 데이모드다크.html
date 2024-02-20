@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark-mode{
+            background-color: black;
+            /* color: white; */
+        }
+        .dark-mode h1, .dark-mode pre{
+            color: orange;
+        }
+        .dark-mode #con{
+            border: 3px dashed orange;
+        }
+        #DarkMode{
+            cursor: pointer;
+        }
+        #con {
+            border: 3px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+    <h1 id="pageTitle">다크모드로 변경 되면 여기는 오렌지</h1>
+    <pre>
+        여기가 지금부터 어두워 집니다. 여러분 놀라지 마세요. 여기 글자도 오렌지
+    </pre>
+</div>
+    <button id="DarkMode">DarkMode</button>
+
+    <script>
+        var body = document.body;
+        var pageTitle = document.getElementById("pageTitle");
+        var toggleDarkMode = document.getElementById("DarkMode")
+
+        DarkMode.onclick = function(){
+            body.classList.toggle("dark-mode")
+            pageTitle.innerText = body.classList.contains("dark-mode") ? "Dark Mode On" : "Dark Mode Off"
+        }
+    </script>
+</body>
+</html>

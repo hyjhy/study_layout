@@ -34,26 +34,20 @@
 
 
 <script>
+    function showPrice(){
+        event.preventDefault(); // 새로고침 방지
+    }
     function calculateDiscountedPrice() {
 
         var originalPrice = parseFloat(document.getElementById("originalPrice").value);
         var discountPercentage = parseFloat(document.getElementById("discountPercentage").value);
 
+        if (isNaN(originalPrice) || isNaN(discountPercentage) || originalPrice < 0 || discountPercentage < 0) {
+            alert("올바른 값을 입력하세요.");
+            return;
+        }
 
-        // if (isNaN(originalPrice) || isNaN(discountPercentage) || originalPrice < 0 || discountPercentage < 0) {
-        //     alert("올바른 값을 입력하세요.");
-        //     return;
-        // }
-
-        // 할인 가격 계산
         var discountedPrice = originalPrice - (originalPrice * discountPercentage / 100);
-        // 할인된 가격
-        // var discountedPrice = originalPrice * discountPercentage / 100;
-        // 퍼센트 올린 값
-        // var discountedPrice = originalPrice * (1 + discountPercentage / 100);
-        // 
-
-        // 결과 출력
         alert("할인된 가격은 " + discountedPrice.toFixed(2) + "원 입니다.");
     }
 </script>

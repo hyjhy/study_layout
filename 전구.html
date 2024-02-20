@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 130px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/토끼.jpeg" id="my">
+    <!-- <img src="./img/검은.jpeg" alt=""> -->
+    <button id="on">켜기</button>
+    <button id="off">끄기</button>
+
+
+    <script>
+        let $my = document.getElementById("my")
+        let $on = document.getElementById("on")
+        let $off = document.getElementById("off")
+
+        $on.onclick = changePic1;
+        $off.onclick = changePic2;
+
+        function chagePic1(){
+            $my.src = "./img/검은.jpeg"
+        }
+        function chagePic2(){
+            $my.src = "./img/토끼.jpeg"
+        }
+    </script>
+</body>
+</html>

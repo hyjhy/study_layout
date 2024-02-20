@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+    <form>
+        <label for="number1">첫번째 수 : </label>
+        <input type="text" id="number1" placeholder="첫 번째 수">
+        <label for="number2">두번째 수 : </label>
+        <input type="text" id="number2" placeholder="두 번째 수">
+        <button type="button" id="clac">계산하기</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const n = document.querySelector("#number1")
+        const m = document.querySelector("#number2")
+        const button = document.querySelector("button")
+        let result = document.querySelector("#result")
+
+        button.onclick = function(){
+            result.innerText = `결과는 ${getGCD(n.value, m.value)}`
+        }
+        function getGCD(n, m){
+            let max = n > m ? n : m;
+            let GCD = 0;
+            for (let i =1; i <= max; i++){
+                if (n % i === 0 && m % i === 0){
+                    GCD = i;
+                }
+            }
+            return GCD
+        }
+    </script>
+</body>
+
+</html>

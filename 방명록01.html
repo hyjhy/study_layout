@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>방명록</title>
+  <style>
+    .div1{
+      border: 0px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+      background-color: lightblue;
+      padding: 10px;
+    }
+    .div1 > p{
+      text-align: start;
+    }
+    button{
+      border: 0px;
+      border-radius: 3px;
+      background-color: white;
+      padding: 5px 10px;
+    }
+
+    input{
+      background-color: white;
+      border: 0px;
+      padding: 3px;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: all 1s cubic-bezier(.25,.8,.25,1);
+    }
+    input:hover{
+      box-shadow: 0 5px 28px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+    }
+    button:active{
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+
+  </style>
+</head>
+<body>
+  <div id="div1" class="div1">
+    <h1>방명록</h1>
+    <em>방명록을 기록해 보세요.</em>
+    <p>이ㅤ름 : <input type="text" id="first" class="first" placeholder="이름을 입력해주세요."></p>
+    <p>연락처 : <input type="text" id="second" placeholder="연락처를 입력해주세요."></p>
+    <p>한마디 : <input type="text" id="third" placeholder="남길 말을 입력해주세요."></p>
+    <button id="guestBtn" onclick="addContents()">방명록 남기기</button>
+  </div>
+
+  <div id="div2">
+
+  </div>
+
+  <script>
+    function addContents(ㅇㄴㅇ){
+
+    let newName = document.getElementById("first").value;
+    let newPhone = document.getElementById("second").value;
+    let newComment = document.getElementById("third").value;
+    
+    let newP = document.createElement("p");
+    let textNode = document.createTextNode("✏️" + newName + " (" + newPhone + ") : " + newComment);
+    
+    newP.appendChild(textNode);
+    newP.onclick = function(){
+      this.remove();
+    }
+    document.body.appendChild(newP);
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        section {
+            border: 5px dashed brown;
+            background-color: orange;
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        a {
+            width: 200px;
+            height: 50px;
+            border: 2px solid brown;
+            background-color: greenyellow;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .back {
+            width: 600px;
+            height: 1px;
+            border-bottom: 2px solid brown;
+            margin: 20px;
+        }
+
+        input {
+            width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>방명록</h1>
+        <div>
+            <i>방명록을 기록해 보세요.</i>
+        </div>
+
+        이름 : <input class="in1" type="text"><br>
+        연락처 : <input class="in2" type="number" placeholder=" - 빼고 입력해주세요 (예시 : 01012345678)"><br>
+        한마디 : <input class="in3" type="text"><br>
+
+        <!-- <button onclick="addContents()">방명록 기록 남기기</button> -->
+        <button onclick="addContents(); return false">방명록 기록 남기기</button>
+        <div class="back"></div>
+        <div id="inpo">
+
+        </div>
+    </section>
+    <!-- 자바스크립트 -->
+    <script>
+        function addContents() {
+            let newItem = document.createElement("li"); // 요소 노드 추가
+            let $in1 = document.querySelector(".in1"); // 폼의 텍스트 필드
+            let $in2 = document.querySelector(".in2"); // 폼의 텍스트 필드
+            let $in3 = document.querySelector(".in3"); // 폼의 텍스트 필드
+            // 텍스트 필드의 값을 텍스트 노드로 만들기
+            let newText = document.createTextNode($in1.value);
+            let newText1 = document.createTextNode($in2.value);
+            let newText2 = document.createTextNode($in3.value);
+            // 텍스트 노드를 요소 노드의 자식 노드로 추가(연결)
+            newItem.appendChild(newText);
+
+            // 웹 문서에서 부모 노드 가져오기 (li를 ul에 연결 위해)
+            let $itemList = document.querySelector("#inpo");
+            $itemList.appendChild(newItem);
+        }
+
+
+    </script>
+</body>
+
+</html>

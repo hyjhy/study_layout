@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            transition: background-color 0.5s;
+        }
+
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .dark-mode h1 {
+            color: #ff9900; /* 다크 모드일 때 헤더의 글자 색 변경 예시 */
+        }
+
+        #toggleDarkMode {
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+    <title>Dark Mode Toggle</title>
+</head>
+<body>
+    <h1 id="pageTitle">Dark Mode Example</h1>
+    <button id="toggleDarkMode">Toggle Dark Mode</button>
+
+    <script>
+        var body = document.body;
+        var pageTitle = document.getElementById("pageTitle");
+        var toggleDarkModeButton = document.getElementById("toggleDarkMode");
+
+        toggleDarkModeButton.onclick = function() {
+            body.classList.toggle("dark-mode");
+            pageTitle.innerText = body.classList.contains("dark-mode") ? "Dark Mode On" : "Dark Mode Example";
+        };
+    </script>
+</body>
+</html>
