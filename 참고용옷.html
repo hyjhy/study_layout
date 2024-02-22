@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 좋아하는 것들 </title>
+    <style>
+        #shoppingList {
+            width: 500px;
+            border: 3px solid black;
+            border-style: dashed;
+            background-color: rgba(128, 128, 0, 0.333);
+            color: black;
+            font-weight: bolder;
+        }
+
+        .big-pic img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .small1{
+            width: 100px;
+            height: 80px;
+        }
+        .small2{
+            width: 100px;
+            height: 80px;
+        }
+        .small3{
+            width: 100px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 상품 내용이 나올 공간 -->
+    <div id="container">
+        <h1>찜한 상품</h1>
+        <h2> 구매하실 제품을 장바구니에 추가 해주세요.</h2>
+        <div class="product">
+            <div class="pdt">
+                <div class="big-pic">
+                <img src="./images/img.jpeg" id="big1">
+            </div>
+                <div class="small-pic">
+                    <img src="./img/토끼.jpeg" class="small1">
+                    <img src="./img/검은.jpeg" class="small1">
+                    <img src="./images/과일.jpeg" class="small1">
+                </div>
+                <h3> 즉시 구매가 : 210,000원 </h3>
+                <h3> Reebok x JJJJound Club C White Olive </h3>
+                <button class="addItem"> 장바구니에 추가하기 </button>
+            </div>
+            <div class="pdt">
+                <div class="big-pic">
+                <img src="./images/img.jpeg" id="big2">
+            </div>
+            <div class="small-pic">
+                <img src="./img/토끼.jpeg" class="small2">
+                <img src="./img/검은.jpeg" class="small2">
+                <img src="./images/과일.jpeg" class="small2">
+            </div>
+                <h3> 즉시 구매가 : 500,000원</h3>
+                <h3> Supreme x Thrasher Hooded Sweatshirt - 21FW </h3>
+                <button class="addItem"> 장바구니에 추가하기 </button>
+            </div>
+            <div class="pdt">
+                <div class="big-pic">
+                <img src="/images/Travis-Scott-x-McDonalds-Work-Jacket-Brown.webp" id="big3">
+            </div>
+            <div class="small-pic">
+                <img src="/images/:images:Travis-Scott-x-McDonalds-Work-Jacket-Brown1.avif" class="small3">
+                <img src="/images/Travis-Scott-x-McDonalds-Work-Jacket-Brown2.avif" class="small3">
+            </div>
+                <h3> 즉시 구매가 : 500,000원 </h3>
+                <h3> Supreme Featherweight Down Puffer Jacket Olive - 23FW </h3>
+                <button class="addItem"> 장바구니에 추가하기 </button>
+            </div>
+        </div>
+        <p> 좋아하는 것들 전부 장바구니에 담아보기 </p>
+    </div>
+    <!-- 장바구니 영역 -->
+    <aside>
+    <div id="shoppingList"> 좋아하는 것들 </div>
+</aside>
+    <!-- id는 script에서 1회성으로 사용가능하고
+    class는 여러번 사용 가능하다. -->
+    <script>
+        const addItemButtons = document.querySelectorAll(".addItem"); // 장바구니 추가 버튼
+        const shoppingList = document.querySelector("#shoppingList"); // 장바구니 영역
+        // const titles = document.querySelectorAll(".pdt h3"); // pdt 안에 있는 h3 (모든 제품 명)
+
+        addItemButtons.forEach((addItemButton) => {
+            addItemButton.addEventListener("click", (e) => {
+                let newP = document.createElement("p"); // 새로운 p요소 노드 만들기
+                let textNode = document.createTextNode(e.target.previousElementSibling.innerText);
+                // 클릭된 버튼의 이전 요소의 텍스트 가져오기
+                newP.appendChild(textNode); // 텍스트 노드를 p요소 노드에 추가
+                shoppingList.appendChild(newP);
+
+                newP.style.fontSize = "20px";
+                newP.style.color = "brown";
+                newP.style.backgroundColor = "lightgray";
+            }, /*{once: true}*/);
+        })
+
+        let big1 = document.querySelector("#big1");
+        let originalSrc1 = big1.src; // 추가
+        let big2 = document.querySelector("#big2");
+        let big3 = document.querySelector("#big3");
+        let smallPics1 = document.querySelectorAll(".small1");
+        let smallPics2 = document.querySelectorAll(".small2");
+        let smallPics3 = document.querySelectorAll(".small3");
+
+        for(let i=0; i<smallPics1.length; i++){
+            smallPics1[i].addEventListener("click", changePic1);
+        }
+
+        function changePic1(){
+            let newPic1 = this.src;
+            big1.setAttribute("src", newPic1);
+
+            setTimeout(() => {
+                big1.setAttribute("src", originalSrc1);
+            }, 2000);  // 몇초 만에 바뀌게 하기
+
+        }
+        
+    </script>
+</body>
+
+</html>

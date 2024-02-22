@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            transition: background-color 0.5s;
+        }
+
+        /* body {
+            transition: background-color 0.5s;
+        } */
+
+        section {
+            border: 5px dashed brown;
+            background-color: orange;
+            text-align: center;
+        }
+
+        h1 {
+            padding: 20px;
+        }
+
+        a {
+            width: 200px;
+            height: 50px;
+            border: 2px solid brown;
+            background-color: greenyellow;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .back {
+            height: 1px;
+            border-bottom: 2px solid brown;
+            margin: 20px;
+        }
+
+        input {
+            width: 300px;
+            margin: 10px;
+        }
+
+        .line {
+            cursor: pointer;
+        }
+
+        .throughline {
+            text-decoration: line-through;
+            color: red;
+        }
+
+        /* 다크모드 */
+        body {
+            transition: background-color 0.5s;
+        }
+
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* 다크 모드일 때 헤더의 글자 색 변경 예시 */
+        .dark-mode h1 {
+            color: #ff9900;
+        }
+
+        .dark-mode section {
+            border: 5px dashed gray;
+            background-color: black;
+        }
+
+        #toggleDarkMode {
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="page">
+        <h1>방명록</h1>
+        <button id="toggleDarkMode">Dark Mode</button>
+        <h2 id="pageTitle">Off</h2>
+        <div>
+            <i>방명록을 기록해 보세요.</i>
+        </div>
+
+        <span>이름 : <input class="in1" type="text"><br></span>
+        <span>연락처 : <input class="in2" type="number" placeholder=" - 빼고 입력해주세요 (예시 : 01012345678)"><br></span>
+        <span>한마디 : <input class="in3" type="text"><br></span>
+
+        <button onclick="addContents(); return false">방명록 기록 남기기</button>
+        <div class="back"></div>
+        <article>
+            <h1>다크모드 시 색상 전환</h1>
+            <div id="container">
+                <h1>일정 추가 가능 합니다. </h1>
+                <form>
+                    추가 일정<input type="text" id="subject" autofocus>
+                    <button onclick="newRegister(); return false">추가하기</button>
+    
+                </form>
+            </div>
+    
+            <h3>하룻동안 해야 하는 일</h3>
+            <!-- 할 일 추가하는 코드 -->
+            <ul>
+                <li class="line" onclick="toggleUnderline(event)">할 일1</li>
+                <li class="line" onclick="toggleUnderline(event)">할 일2</li>
+                <li class="line" onclick="toggleUnderline(event)">할 일3</li>
+            </ul>
+            <h1>추가로 해야 하는 일</h1>
+            <ul id="itemList" onclick="toggleUnderline(event)"></ul>
+
+        </article>
+        <!-- 추가적으로 할일 -->
+        <!-- <div id="container">
+            <h1>추가적으로 해야 하는 일</h1>
+            <form>
+                <input type="text" id="subject" autofocus>
+                <button onclick="newRegister(); return false">추가하기</button>
+                <ul id="itemList" onclick="toggleUnderline(event)"></ul>
+
+            </form>
+        </div> -->
+    
+        <div>
+            <h1>방문록</h1>
+        </div>
+        <div id="inpo">
+
+        </div>
+    </section>
+
+    <script>
+        function addContents() {
+            let newItem = document.createElement("div"); // 새로운 div 요소 노드 추가
+            let $in1 = document.querySelector(".in1"); // 이름 필드
+            let $in2 = document.querySelector(".in2"); // 연락처 필드
+            let $in3 = document.querySelector(".in3"); // 한마디 필드
+
+            // 입력 받은 값으로 텍스트 생성
+            let text = `이름: ${$in1.value}, 연락처: ${$in2.value}, 한마디: ${$in3.value}`;
+            let newText = document.createTextNode(text);
+
+            // 텍스트를 div에 추가
+            newItem.appendChild(newText);
+
+            // 웹 문서에서 부모 노드를 가져와서 div 추가
+            let $itemList = document.querySelector("#inpo");
+            $itemList.appendChild(newItem);
+
+            // 입력 필드 초기화
+            $in1.value = "";
+            $in2.value = "";
+            $in3.value = "";
+
+            // 삭제하는 기능
+            newItem.addEventListener("click", function () {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this);
+                }
+            })
+        }
+        // function toggleUnderline(element) {
+        //     element.classList.toggle("throughline");
+        // }
+
+        function toggleUnderline(event) {
+            // 클릭된 요소가 li 태그인 경우에만 처리
+            if (event.target.tagName.toLowerCase() === 'li') {
+                event.target.classList.toggle("throughline");
+            }
+        }
+
+
+
+
+
+        /* 다크모드 */
+        var body = document.body;
+        var pageTitle = document.getElementById("pageTitle");
+        var toggleDarkModeButton = document.getElementById("toggleDarkMode");
+
+        toggleDarkModeButton.onclick = function () {
+            body.classList.toggle("dark-mode");
+            pageTitle.innerText = body.classList.contains("dark-mode") ? "On" : "Off";
+        };
+
+        // 할 일 추가하는 코드
+        function newRegister() {
+            // 1.요소(태그) 노드 추가
+            let newItem = document.createElement("li");
+            // 2.폼에서 입력받은 텍스트 필드
+            let $subject = document.querySelector("#subject");
+            // 2.텍스트 필드의 값을 텍스트 노드로 만들기
+            let newText = document.createTextNode($subject.value);
+            // 3.텍스트 노드를 요소 노드의 자식 노드로 추가(연결)
+            newItem.appendChild(newText);
+
+            // 4.웹 문서에서 부모 노드 가져오기(ul)
+            let $itemList = document.querySelector("#itemList");
+            // 4.새로 만든 요소 노드를 부모 노드에 추가(연결)
+            // $itemList.appendChild(newItem);
+            // 새로 입력된 내용이 첫번째 줄에 나오게
+            $itemList.insertBefore(newItem, $itemList.childNodes[0]);
+            // 폼의 텍스트 필드 값 지워지게 만들기
+            $subject.value = "";
+
+            // 꾸미기
+            newItem.style.cursor = "pointer"
+            // newItem.style.textDecorationLine = "underline"
+        }
+
+
+
+    </script>
+</body>
+
+</html>

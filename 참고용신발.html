@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="0221장바구니1.css">
+</head>
+
+<body>
+    <!-- 상품 내용이 나올 공간 -->
+
+    <div id="container">
+        <h3>MUSINSA</h3>
+        <h2>무신사 단독 <span class="first">[첫 구매 이벤트 상품]</span> 슈퍼스타 82 - 그린:오프화이트 / ID6107</h2>
+        <div class="box">
+            <div class="box1">
+             <p><img src="https://image.msscdn.net/images/goods_img/20240208/3857293/3857293_17073507962452_500.jpg"
+                        id="big"></p>
+            </div>
+            <section>
+                <h5>무신사 단독</h5>
+                <h5 class="h5name">무신사 스토어에서만 단독 판매하는 상품입니다.</h5>
+                <div class="product-info">
+                    <h4>Product Info</h4>
+                    <p>제품 정보</p>
+                    <div class="mainproductInfo">
+                    <div class="info">
+                    <span>브랜드/ 품번</span><br>
+                    <span>시즌/ 성별</span><br>
+                    <span>조회수(1개월)</span><br>
+                    <span>좋아요</span><br>
+                    <span>구매후기</span><br>
+                </div>
+                <div class="maininfo">
+                    <span>ADIDAS / ID6107</span><br>
+                    <span>2023F/W / 남성, 여성</span><br>
+                    <span>400회 이상</span><br>
+                    <span class="imgbox"><a href="#" id="Plus"><img src="./img/토끼.jpeg" id="Plus1"></a>
+                        <div class="inText">0</div></span>
+                    <span> / <a href="#">후기 445개</a></span><br>
+                </div>
+            </div>
+
+            
+            <div id="prod-pic">
+                <div id="small-pic">
+                    <img src="https://image.msscdn.net/images/goods_img/20240208/3857293/3857293_17073507962452_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/goods_img/20240208/3857293/3857293_17073507962452_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/prd_img/20240208/3857293/detail_3857293_17073508058962_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/prd_img/20240208/3857293/detail_3857293_17073508066496_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/prd_img/20240208/3857293/detail_3857293_17073508051865_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/prd_img/20240208/3857293/detail_3857293_17073508045210_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/prd_img/20240208/3857293/detail_3857293_17073508400268_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/prd_img/20240208/3857293/detail_3857293_17073508074331_500.jpg" class="small">
+                    <img src="https://image.msscdn.net/images/prd_img/20240208/3857293/detail_3857293_17073508084237_500.jpg" class="small">
+                </div>
+            </div>
+                    
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <button id="addItem">장바구니</button>
+        <button id="get">바로구매</button>
+    </div>
+
+    <!-- 장바구니 영역 -->
+    <div id="shoppingList">택배배송</div>
+
+
+    <script>
+        // 장바구니 추가 버튼
+        const addITemButton = document.querySelector("#addItem");
+        const get = document.querySelector("#get");
+
+        // 장바구니 영역
+        const shoppingList = document.querySelector("#shoppingList");
+
+        // h2 태그로 가져 오기 (책 제목)
+        // container 안에 있는 자식요소 h2태그 가져오기 (>:꺽세)
+        const title = document.querySelector("#container > h2");
+
+
+
+
+
+        addITemButton.addEventListener("click", () => {
+
+            // 새로운 p요소 노드 만들기.
+            let newP = document.createElement("p");
+
+            // 텍스트 노드 만들기.
+            // title => 텍스트 노드 만들기
+            let textNode = document.createTextNode(title.innerText);
+
+            // 텍스트 노드를 p요소 노드에 추가.
+            newP.appendChild(textNode);
+
+            // p요소를 장바구니에 추가.(부모)
+            shoppingList.appendChild(newP);
+            event.preventDefault(newP);
+
+            newP.addEventListener("click", function () {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this)
+                }
+            })
+
+
+
+            // once:true : 한번만 눌러지게(이벤트 리스너를 한 번만 실행)
+        });
+
+        get.addEventListener("click", () => {
+            let newP = document.createElement("p");
+            let textNode = document.createTextNode(title.innerText);
+            newP.appendChild(textNode);
+            shoppingList.appendChild(newP);
+            event.preventDefault(newP)
+
+            
+
+            newP.addEventListener("click", function () {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this)
+                }
+            })
+
+        }, { once: true });
+
+
+
+
+         // *******************하트 누르기***********************
+        //  let $inText = document.querySelector('.inText');
+        //  let $Plus1 = document.querySelector('.Plus1');
+
+        // let num = 0;
+
+        // $Plus.addEventListener("click", (e) => {
+        //     e.preventDefault();
+        //     num++;
+        //     console.log(num)
+        //     $inText.textContent = num;
+        // });
+
+
+         // *******************하트 누르기***********************
+         const $Plus = document.getElementById('Plus');
+         let $inText = document.querySelector('.inText');
+         let num = 0;
+
+        $Plus.addEventListener("click", (e) => {
+            e.preventDefault();
+            num++;
+            console.log(num)
+            $inText.textContent = num;
+        });
+
+        // *******************사진 누르기***********************
+        let big = document.querySelector("#big");
+        let smallPics = document.querySelectorAll(".small")
+
+        for(let i=0; i<smallPics.length; i++){
+            smallPics[i].addEventListener("click", changePic);
+        }
+
+        function changePic(){
+            let newPic = this.src;
+            big.setAttribute("src", newPic);
+        }
+    </script>
+
+</body>
+
+</html>
