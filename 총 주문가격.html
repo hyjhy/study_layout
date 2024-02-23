@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            background-color: beige;
+            padding: 5px;
+        }
+        h1 {
+            background-color: palegreen;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>총 주문 가격 확인</h1>
+        <fieldset>
+            <legend>기본가격</legend>
+            <p>30,000원</p>
+        </fieldset>
+        <fieldset>
+            <legend>추가 주문</legend>
+            <!-- 체크박스 value에 각각의 가격 값을 입력한다 -->
+            <!-- 모든 체크박스 클래스 이름 같게 .checkbox -->
+            <label><input type="checkbox" class="chakbx" value="12000">기장 추가 (12,000원)</label>
+        </fieldset>
+        <!-- 합계 금액 나오는 곳 -->
+        <fieldset>
+            <legend>합계</legend>
+            <input type="text" id="total" name="total" class="price" readonly>
+        </fieldset>
+    </form>
+
+
+
+    <script>
+        let price = 30000;
+        // 모든 체크박스 (같은 이름의 클래스)를 변수로 가져오기 qSAll
+        // total 합계 가격 부분 변수로 가져오기
+        let sideMenu = document.querySelectorAll(".chakbx")
+        let total = document.querySelector("#total")
+
+        total.value = price + "원";
+
+        for(i=0; i<sideMenu.length; i++){
+            sideMenu[i].onclick = function(){
+                if(this.checked == true) {
+                    // 합산가격 // += 증감한다
+                    price += parseInt(this.value)
+                } else {
+                    // 체크 해제시 차감하기 -=
+                    price -= parseInt(this.value)
+                }
+                total.value = price + "원";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -22,8 +22,10 @@
     <!-- 상품 내용이 나올 공간 -->
     <div id="container">
         <h3>상품 설명
+            <div>
             <h2>1. 상품 명 : HTML + CSS + 자바스크립트</h2>
-            <span id="numBer">0</span>
+            <span id="numBer">0</span></div>
+
             <h2>2. 상품 명 : HTML + CSS + 자바스크립트</h2>
             <h2>3. 상품 명 : HTML + CSS + 자바스크립트</h2>
             <p>코딩만 따라 해도 웹페이지가 만들어지는</p>
@@ -39,6 +41,7 @@
     <script>
         const shoppingList = document.querySelector("#shoppingList"); // 장바구니 영역
         const titles = document.querySelectorAll("#container h2"); // 모든 책 제목
+        const numBers = document.querySelectorAll("#container span")
 
         titles.forEach(title => {
             title.addEventListener("click", () => {
@@ -53,7 +56,26 @@
             // }, { once: true }); //한번만 눌러지게 (이벤트 리스너를 한번만 실행)
             })
 
+            shoppingList.addEventListener("click", function () {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this);
+                }
+            })
 
+        })
+        
+        numbers.forEach(numbers => {
+            numbers.addEventListener("click", () => {
+                let newP = document.createElement("span"); //새로운 p요소 노드 만들기.
+                let textNode = document.createTextNode(numbers.innerText); //텍스트 노드 만들기
+                newP.appendChild(textNode1); //덱스트 노드를 p요소 노드에 추가.
+                shoppingList.appendChild(newP); //p요소를 장바구니에 추가. (부모)
+
+                // 꾸미기
+                newP.style.fontSize = "12px"
+                newP.style.color = "green"
+            // }, { once: true }); //한번만 눌러지게 (이벤트 리스너를 한번만 실행)
+            })
 
             shoppingList.addEventListener("click", function () {
                 if (this.parentNode) {
@@ -61,7 +83,30 @@
                 }
             })
 
-        }) 
+        })
+        
+        const $btnPlus = document.getElementById("btnPlus")
+        const $btnMinus = document.getElementById("btnMinus")
+        let $numBer = document.querySelector("#numBer")
+        let num = 0; // 제어할 숫자를 0으로 초기화
+
+        // btnPlus를 클릭할 때마다 함수
+        $btnPlus.addEventListener("click", e => {
+            e.preventDefault(); // 새로고침 방지
+            ++num; // 1씩 증가
+            console.log(num);
+            $numBer.innerText = num;
+
+        })
+        // btnMinus를 클릭할 때마다 함수
+        $btnMinus.addEventListener("click", e => {
+            e.preventDefault(); // 새로고침 방지
+            --num; // 1씩 감소
+            console.log(num);
+            $numBer.textContent = num;
+
+        })
+
     </script>
 </body>
 

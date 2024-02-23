@@ -32,7 +32,8 @@
     <script>
         let big = document.querySelector("#big");
         let smallPics = document.querySelectorAll(".small");
-        let originalSrc = big.src // 원래 사진으로 돌아가기 위한 코드
+        const originalSrc = big.src // 원래 사진으로 돌아가기 위한 코드
+        // 바뀌면 안되는 변수는 const를 입력하는 버릇들이기
 
         for(let i=0; i<smallPics.length; i++){
             smallPics[i].addEventListener("click", changePic);

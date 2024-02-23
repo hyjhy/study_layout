@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 600px;
+            height: 300px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>다른 이미지를 보려면 좌우 화살표를 눌러보세요</h3>
+    <div id="container">
+        <!-- 유니코드 엔티티코드 -->
+        <div class="arrow" id="left">&lang;</div>
+        <div class="arrow" id="right">&rang;</div>
+    </div>
+
+    <script>
+        const container = document.querySelector("#container");
+        // 이미지 경로는 이미지 이름만 입력하기
+        const pics = [`cafe.jpg`, `cafe.jpg`, `momo.jpg`, `img.jpeg`, `과일.jpeg`]
+        // 이미지 경로 확인 잘하기 / ./넣기
+        container.style.backgroundImage = `url(./images/${pics[0]})`;
+        const arrows = document.querySelectorAll(".arrow"); // 모든 화살표 가져오기
+
+        let i=0; // 배열 인덱스
+        arrows.forEach(arrow => {
+            arrow.addEventListener("click", (e) => {
+                if(e.target.id === "left"){
+                    i--; //이전 이미지로 이동
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
