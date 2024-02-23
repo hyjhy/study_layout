@@ -9,8 +9,23 @@
         #container {
             width: 600px;
             height: 300px;
-            border: 2px solid green;
+            border: 2px solid seagreen;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-size: cover;
         }
+        .arrow {
+            z-index: 100;
+            font-size: 2em;
+            background-color: #ddd;
+            color: black;
+        }
+        .arrow:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+        
     </style>
 </head>
 
@@ -33,9 +48,18 @@
         let i=0; // 배열 인덱스
         arrows.forEach(arrow => {
             arrow.addEventListener("click", (e) => {
-                if(e.target.id === "left"){
+                if(e.target.id === "left"){ // 왼쪽인지 확인
                     i--; //이전 이미지로 이동
+                    if (i<0){ // 첫번째 이미지
+                        i = pics.length -1; // 맨 마지막 사진 이동
+                    }
+                } else if (e.target.id === "right"){ // 오른쪽인지 확인
+                    i++; // 다음 이미지로 이동
+                    if(i === pics.length){ // 마지막 이미지
+                        i = 0; //첫번째 이미지로 이동
+                    }
                 }
+                container.style.backgroundImage = `url(./images/${pics[i]})`;
             })
         })
     </script>
