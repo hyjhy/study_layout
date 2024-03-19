@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        img {
+            width: 600px;
+            height: 400px;
+        }
+
+        .ryoko {
+            display: flex;
+        }
+
+        .seulgi1,
+        .holl1 {
+            width: 600px;
+            height: 140px;
+            background-color: rgba(0, 0, 0, 0);
+            background-color: white;
+        }
+
+        .sm {
+            padding: 2% 0 0;
+        }
+
+        .seulgi {
+            margin: 5px;
+        }
+
+        .seulgi p {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .holl p {
+            text-align: center;
+        }
+
+        .seulgi2 {
+            text-align: center;
+            font-size: 25px;
+            padding: 1%;
+        }
+
+        .seulgi:hover .seulgiimg {
+            opacity: 0.6;
+        }
+
+        .seulgi1:hover .hidde {
+            display: block;
+            background-color: white;
+        }
+
+        .seulgi1:hover,
+        .holl1:hover {
+            transform: translateY(-80px);
+            transform-origin: 0 100%;
+            background-color: white;
+        }
+
+        .hidde {
+            display: none;
+            color: rgb(85, 85, 85);
+        }
+
+        .hidde p {
+            padding: 1% 0 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="seulgi0">
+        <div class="ryoko">
+            <div class="seulgi">
+                <img src="https://cdn.imweb.me/upload/S20220318b8271c9a37983/077a2678b75a6.jpg" class="seulgiimg">
+                <div class="seulgi1">
+                    <p class="sm">공간 컨셉에 맞는 식물 디자인 컨설팅</p>
+                    <h3 class="seulgi2">디자인플랜트케어</h3>
+                    <div class="hidde">
+                        <p><span>#디자인컨설팅</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>#프리미엄화기</span></p>
+                        <p>#핫플레이스조성</p>
+                        <p><span>#플랜테리어</span>&nbsp;&nbsp;&nbsp;<span>#맞춤제안</span>&nbsp;&nbsp;&nbsp;<span>#렌탈</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="seulgi">
+                <img src="https://cdn.imweb.me/upload/S20220318b8271c9a37983/6db828c763204.jpg" class="seulgiimg">
+                <div class="seulgi1">
+                    <p class="sm">오피스 인테리어 식물렌탈서비스</p>
+                    <h3 class="seulgi2">그린오피스케어</h3>
+                    <div class="hidde">
+                        <p><span>#스마트오피스</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>#사무환경개선</span></p>
+                        <p><span>#공기정화식물</span>&nbsp;&nbsp;&nbsp;<span>#직원복지</span>&nbsp;&nbsp;&nbsp;<span>#업무능률향상</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

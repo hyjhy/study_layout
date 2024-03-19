@@ -1,0 +1,103 @@
+?
+ 이전글 다음글목록
+요청 소스 자료 
+상품의 이름 누르면 개수 증가, 개수에 따른(곱셈) 합계금액
+프로필 사진인기멤버
+suzup1
+ 구독
+1:1 채팅
+2024.02.23. 16:33조회 8
+댓글 0URL 복사
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantity and Price Calculator</title>
+<style>
+    .container {
+        margin: 50px auto;
+        text-align: center;
+        width: 300px;
+        border: solid 1px;
+    }
+    h2 {
+        cursor: pointer;
+        color: hotpink;
+        background-color: pink;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2 id="title"> 상품의 이름 </h2>
+    <label for="quantity">개수:</label>
+    <input type="number" id="quantity" min="0" value="0">
+    <br><br>
+    <label for="price">가격:</label>
+    <span id="price">30,000</span> 원 <!-- 가격을 문자열로 표시 -->
+    <!-- <input type="number" id="price" min="0" value="30000"> -->
+    <br><br>
+    <p>총 개수: <span id="totalQuantity">0</span></p>
+    <p>합계 가격: <span id="total">0</span></p>
+</div>
+
+<script>
+    const quantityInput = document.getElementById('quantity');
+    const priceSpan = document.getElementById('price');
+    const totalQuantitySpan = document.getElementById('totalQuantity');
+    const totalPriceSpan = document.getElementById('totalPrice');
+    const totalSpan = document.getElementById('total');
+    const title = document.getElementById('title');
+    let quantity = 0; // 초기 수량 값
+    //let price = 30000; // 초기 가격 값
+    let price = parseInt(priceSpan.textContent.replace(',', '')); // 초기 가격 값
+
+    // 수량 및 가격 입력 시 합계 갱신
+    quantityInput.addEventListener('input', updateTotal);
+
+    // 제목 클릭 시 수량 추가
+    title.addEventListener('click', addQuantity);
+
+    function updateTotal() {
+        quantity = parseInt(quantityInput.value); // 입력된 수량
+        let total = quantity * price; // 합계 계산
+        totalSpan.textContent = total.toLocaleString(); // 화면에 합계 업데이트
+
+        //총 개수 업데이트
+        let totalQuantity = 0;
+        totalQuantity += quantity;
+        totalQuantitySpan.textContent = totalQuantity.toLocaleString();
+    }
+
+    function addQuantity() {
+        quantity++;
+        quantityInput.value = quantity;
+        updateTotal();
+    }
+</script>
+</body>
+</html>
+​
+
+프로필 사진suzup1님의 게시글 더보기 
+좋아요0
+이 글을 '좋아요'한 멤버 리스트 댓글0
+ 공유
+신고
+댓글관심글 댓글 알림
+등록
+댓글을 입력하세요
+여혈리
+댓글을 남겨보세요
+선택된 파일 없음등록
+ 글쓰기답글목록 TOP
+
+전체글
+주문배송정보 체크박스 체크되었다면,,	suzup1	17:32
+상품의 이름 누르면 개수 증가, 개수에 따른(곱셈) 합계금액	suzup1	16:33
+총 주문 가격 넣기 김동욱	Kugnod	12:13
+제이슨 파일 있는 곳	suzup1	12:01
+김희선	김희선	11:26
+페이징 이동123전체보기
+레이어 닫기

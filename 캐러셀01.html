@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 600px;
+            height: 300px;
+            border: 2px solid seagreen;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-size: cover;
+        }
+        .arrow {
+            z-index: 100;
+            font-size: 2em;
+            background-color: #ddd;
+            color: black;
+        }
+        .arrow:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h3>다른 이미지를 보려면 좌우 화살표를 눌러보세요</h3>
+    <div id="container">
+        <!-- 유니코드 엔티티코드 -->
+        <div class="arrow" id="left">&lang;</div>
+        <div class="arrow" id="right">&rang;</div>
+    </div>
+
+    <script>
+        const container = document.querySelector("#container");
+        // 이미지 경로는 이미지 이름만 입력하기
+        const pics = [`https://cdn.pixabay.com/photo/2023/11/29/21/05/animal-8420313_1280.jpg`,
+         `https://cdn.pixabay.com/photo/2023/10/27/16/29/meerkat-8345747_1280.jpg`,
+          `https://cdn.pixabay.com/photo/2023/07/17/12/13/bird-8132549_1280.jpg`,
+           `https://cdn.pixabay.com/photo/2024/02/14/10/41/gibbon-8573117_1280.jpg`,
+            `https://cdn.pixabay.com/photo/2023/03/11/15/47/mongoose-7844724_1280.jpg`]
+        // 이미지 경로 확인 잘하기 / ./넣기
+        container.style.backgroundImage = `url(${pics[0]})`;
+        const arrows = document.querySelectorAll(".arrow"); // 모든 화살표 가져오기
+
+        let i=0; // 배열 인덱스
+        arrows.forEach(arrow => {
+            arrow.addEventListener("click", (e) => {
+                if(e.target.id === "left"){ // 왼쪽인지 확인
+                    i--; //이전 이미지로 이동
+                    if (i<0){ // 첫번째 이미지
+                        i = pics.length -1; // 맨 마지막 사진 이동
+                    }
+                } else if (e.target.id === "right"){ // 오른쪽인지 확인
+                    i++; // 다음 이미지로 이동
+                    if(i === pics.length){ // 마지막 이미지
+                        i = 0; //첫번째 이미지로 이동
+                    }
+                }
+                container.style.backgroundImage = `url(${pics[i]})`;
+            })
+        })
+    </script>
+</body>
+
+</html>

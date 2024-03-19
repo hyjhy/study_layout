@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            background-color: beige;
+            padding: 5px;
+        }
+
+        h1 {
+            background-color: palegreen;
+        }
+
+        #numBer {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>총 주문 가격 확인</h1>
+        <fieldset>
+            <legend>메인</legend>
+            <div>
+                <span>30,000원</span>
+                <span><button id="btnPlus">추가</button></span>
+                <span><button id="btnMinus">삭제</button></span>
+                <span>수량 : <span class="sum">0</span></span>
+            </div>
+            <div>
+                <span>30,000원</span>
+                <span><input id="numBer" type="text" maxlength="2" min="0"></span> 개
+                <span>( 추가적으로 구매를 원하시면 연락바랍니다. )</span>
+            </div>
+            <span>30,000원</span>
+        </fieldset>
+        <fieldset>
+            <legend>추가 주문</legend>
+            <!-- 체크박스 value에 각각의 가격 값을 입력한다 -->
+            <!-- 모든 체크박스 클래스 이름 같게 .checkbox -->
+            <label><input type="checkbox" class="chakbx" value="12000">화환 추가 (12,000원)</label>
+            <label><input type="checkbox" class="chakbx" value="24000">선인장 추가 (24,000원)</label>
+            <label><input type="checkbox" class="chakbx" value="36000">소형식물 추가 (36,000원)</label>
+        </fieldset>
+        <!-- 합계 금액 나오는 곳 -->
+        <fieldset>
+            <legend>합계</legend>
+            <input type="text" id="total" name="total" class="price" readonly>
+        </fieldset>
+    </form>
+
+    <script>
+        let price = 0;
+
+        // 모든 체크박스 (같은 이름의 클래스)를 변수로 가져오기 qSAll
+        // total 합계 가격 부분 변수로 가져오기
+        let sideMenu = document.querySelectorAll(".chakbx");
+        let total = document.querySelector("#total");
+        let sumElement = document.querySelector(".sum"); // 단일 sum 요소 선택
+
+        total.value = price + "원";
+
+        for (let i = 0; i < sideMenu.length; i++) {
+            sideMenu[i].onclick = function () {
+                if (this.checked == true) {
+                    // 합산가격 // += 증감한다
+                    price += parseInt(this.value);
+                } else {
+                    // 체크 해제시 차감하기 -=
+                    price -= parseInt(this.value);
+                }
+                total.value = price + "원";
+            };
+        }
+
+        // 수량 늘리고, 줄어든 버튼-----------------------------------
+        const $btnPlus = document.getElementById("btnPlus");
+        const $btnMinus = document.getElementById("btnMinus");
+        let num = 0; // 제어할 숫자를 0으로 초기화
+
+        // btnPlus를 클릭할 때마다 함수
+        $btnPlus.addEventListener("click", (e) => {
+            e.preventDefault(); // 새로고침 방지
+            ++num; // 1씩 증가
+            console.log(num);
+            sumElement.textContent = num;
+            price += 30000; // 수량이 늘어날 때마다 30,000원씩 추가
+            updateTotal();
+        });
+
+        // btnMinus를 클릭할 때마다 함수
+        $btnMinus.addEventListener("click", (e) => {
+            e.preventDefault(); // 새로고침 방지
+            if (num > 0) {
+                --num; // 1씩 감소
+                console.log(num);
+                sumElement.textContent = num;
+                price -= 30000; // 수량이 줄어들 때마다 30,000원씩 감소
+                updateTotal();
+            }
+        });
+// ----------------------------------------------------값을 모아놓는 함수
+        function updateTotal() {
+            // 3자리 숫자마다 ,콤마 추가
+            total.value = price.toLocaleString() + "원";
+        }
+        // 이 함수 updateTotal()는 총 주문 가격을 표시하는 필드를 갱신하는 역할을 합니다.
+        // toLocaleString() 메소드를 사용하여 숫자를 한국식 표기법으로 형식화하고, 각 자리의 숫자 사이에 쉼표를 추가합니다.
+        // 따라서 이 함수는 주문 가격을 한국식 통화 형식으로 표시하여 사용자에게 더 읽기 쉽게 제공합니다.
+        // 함수 내용은 다음과 같이 해석할 수 있습니다
+
+    </script>
+</body>
+
+</html>

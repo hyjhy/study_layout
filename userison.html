@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result">
+        <!-- <div class="quote"></div>
+        <div class="author"></div> -->
+    </div>
+
+    <script>
+        fetch("https://dummyjson.com/quotes")
+            .then(response => response.json())
+            .then(json => {
+                // 한번에 가져오는 데이터 갯수 확인하기
+                console.log(json);
+                console.log(json.quotes);
+                const result = document.querySelector("#result")
+                let output = ''
+
+                // json.quotes.forEach 제이슨 안에 quotes 안에 quote가 있다
+                json.quotes.forEach(quote => {
+                    output += `
+                    <div class="puote">${quote.quote}</div>
+                    <div class="author">- ${quote.author}</div>
+                    <hr>`
+                });
+                result.innerHTML = output;
+            })
+            .catch(error => console.log(error));
+
+    </script>
+</body>
+
+</html>

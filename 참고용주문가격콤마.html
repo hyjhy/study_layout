@@ -1,0 +1,66 @@
+
+<fieldset>
+    <legend>합계</legend>
+    <input type="text" id="total" name="total" class="price" readonly>
+</fieldset>
+</form>
+
+<script>
+    let price = 0;
+
+    // 모든 체크박스 (같은 이름의 클래스)를 변수로 가져오기 qSAll
+    // total 합계 가격 부분 변수로 가져오기
+    let sideMenu = document.querySelectorAll(".chakbx");
+    let total = document.querySelector("#total");
+    let sumElement = document.querySelector(".sum"); // 단일 sum 요소 선택
+
+    total.value = price + "원";
+
+    for (let i = 0; i < sideMenu.length; i++) {
+        sideMenu[i].onclick = function () {
+            if (this.checked == true) {
+                // 합산가격 // += 증감한다
+                price += parseInt(this.value);
+            } else {
+                // 체크 해제시 차감하기 -=
+                price -= parseInt(this.value);
+            }
+            updateTotal();
+        };
+    }
+
+    // 수량 늘리고, 줄어든 버튼-----------------------------------
+    const $btnPlus = document.getElementById("btnPlus");
+    const $btnMinus = document.getElementById("btnMinus");
+    let num = 0; // 제어할 숫자를 0으로 초기화
+
+    // btnPlus를 클릭할 때마다 함수
+    $btnPlus.addEventListener("click", (e) => {
+        e.preventDefault(); // 새로고침 방지
+        ++num; // 1씩 증가
+        console.log(num);
+        sumElement.textContent = num;
+        price += 30000; // 수량이 늘어날 때마다 30,000원씩 추가
+        updateTotal();
+    });
+
+    // btnMinus를 클릭할 때마다 함수
+    $btnMinus.addEventListener("click", (e) => {
+        e.preventDefault(); // 새로고침 방지
+        if (num > 0) {
+            --num; // 1씩 감소
+            console.log(num);
+            sumElement.textContent = num;
+            price -= 30000; // 수량이 줄어들 때마다 30,000원씩 감소
+            updateTotal();
+        }
+    });
+
+    function updateTotal() {
+        // 3자리 숫자마다 ,콤마 추가
+        total.value = price.toLocaleString() + "원";
+    }
+</script>
+</body>
+
+</html>

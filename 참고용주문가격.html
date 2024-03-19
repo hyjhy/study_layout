@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            background-color: beige;
+            padding: 5px;
+        }
+        h1 {
+            background-color: palegreen;
+        }
+        #numBer {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>총 주문 가격 확인</h1>
+        <fieldset>
+            <legend>메인</legend>
+            <div>
+            <span>30,000원</span>
+            <span><button id="btnPlus">추가</button></span>
+            <span><button id="btnMinus">삭제</button></span>
+            <span>수량 : <span id="sum">0</span></span>
+        </div>
+        <div>
+            <span>30,000원</span>
+            <span><input id="numBer" type="number"></span> 개
+        </div>
+            <span>30,000원</span>
+        </fieldset>
+        <fieldset>
+            <legend>추가 주문</legend>
+            <!-- 체크박스 value에 각각의 가격 값을 입력한다 -->
+            <!-- 모든 체크박스 클래스 이름 같게 .checkbox -->
+            <label><input type="checkbox" class="chakbx" value="12000">화환 추가 (12,000원)</label>
+            <label><input type="checkbox" class="chakbx" value="24000">선인장 추가 (24,000원)</label>
+            <label><input type="checkbox" class="chakbx" value="36000">소형식물 추가 (36,000원)</label>
+        </fieldset>
+        <!-- 합계 금액 나오는 곳 -->
+        <fieldset>
+            <legend>합계</legend>
+            <input type="text" id="total" name="total" class="price" readonly>
+        </fieldset>
+    </form>
+
+
+
+    <script>
+        let price = 0;
+        // 모든 체크박스 (같은 이름의 클래스)를 변수로 가져오기 qSAll
+        // total 합계 가격 부분 변수로 가져오기
+        let sideMenu = document.querySelectorAll(".chakbx")
+        let total = document.querySelector("#total")
+
+        total.value = price + "원";
+
+        for(i=0; i<sideMenu.length; i++){
+            sideMenu[i].onclick = function(){
+                if(this.checked == true) {
+                    // 합산가격 // += 증감한다
+                    price += parseInt(this.value)
+                } else {
+                    // 체크 해제시 차감하기 -=
+                    price -= parseInt(this.value)
+                }
+                total.value = price + "원";
+            }
+        }
+        // 수량 늘리고, 줄어든 버튼-----------------------------------
+        const $btnPlus = document.getElementById("btnPlus")
+        const $btnMinus = document.getElementById("btnMinus")
+        let $sum = document.querySelector("#sum")
+        let num = 0; // 제어할 숫자를 0으로 초기화
+
+        // btnPlus를 클릭할 때마다 함수
+        $btnPlus.addEventListener("click", e => {
+            e.preventDefault(); // 새로고침 방지
+            ++num; // 1씩 증가
+            console.log(num);
+            $sum.innerText = num;
+        })
+        // btnMinus를 클릭할 때마다 함수
+        $btnMinus.addEventListener("click", e => {
+            e.preventDefault(); // 새로고침 방지
+            --num; // 1씩 감소
+            console.log(num);
+            $sum.textContent = num;
+        })
+
+    </script>
+</body>
+</html>
